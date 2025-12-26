@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AERO-HPR Workshop @ CVPR 2026</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="CVPR 2026 Workshop on Human Perception and Recognition in Aerial Surveillance">
+    <link rel="canonical" href="https://aero-hpr.github.io/">
+
+    <!-- Custom CSS & Bootstrap Core CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="css/font-awesome/css/all.min.css">
+
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/09c88d384d.js" crossorigin="anonymous"></script>
+
+    <style>
+        /* Loading screen */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: opacity 0.5s ease-out;
+        }
+        #loading-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(119, 201, 212, 0.3);
+            border-top: 4px solid #77c9d4;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loader-text {
+            margin-top: 20px;
+            color: #77c9d4;
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        /* Base font size increase */
+        body {
+            font-size: 18px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        li {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        h2 {
+            font-size: 36px;
+        }
+        h3 {
+            font-size: 28px;
+        }
+        h4 {
+            font-size: 22px;
+        }
+
+        /* Section background alternation */
+        .section-black {
+            background-color: #000000;
+        }
+        .section-alt {
+            background-color: #15202b;
+            background-image: linear-gradient(135deg, #15202b 0%, #1a2836 50%, #15202b 100%);
+        }
+
+        .date-text {
+            font-size: 0.85em;
+        }
+        .dates-column {
+            font-size: 0.85em;
+        }
+        .topics-list {
+            text-align: left;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .topics-list li {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        .date-highlight {
+            background: #77c9d4;
+            color: #000;
+            padding: 3px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        /* Ensure CFP list items are larger */
+        #cfp ul li {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        /* Override content-section padding */
+        .content-section {
+            padding-top: 60px !important;
+            padding-bottom: 60px !important;
+        }
+
+        /* Consistent readable text sizes across all sections */
+        .content-section p {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .content-section li {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        .topics-list li {
+            font-size: 1.1em !important;
+            line-height: 1.8;
+        }
+        .person-affliation {
+            font-size: 0.95em;
+        }
+    </style>
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Loading Screen -->
+    <div id="loading-screen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999;display:flex;justify-content:center;align-items:center;flex-direction:column;">
+        <div class="loader" style="width:60px;height:60px;border:4px solid rgba(119,201,212,0.3);border-top:4px solid #77c9d4;border-radius:50%;animation:spin 1s linear infinite;"></div>
+        <div style="margin-top:20px;color:#77c9d4;font-size:18px;font-family:Arial,sans-serif;letter-spacing:2px;">AERO-HPR</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-helicopter"></i> <span class="light">AERO-HPR @ CVPR 2026</span>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#cfp">Call for Papers</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#program">Program</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#speakers">Speakers</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#organizers">Organizers</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro" style="background: url(img/bg-denver.jpg) no-repeat bottom center scroll; background-size: cover; -o-background-size: cover;">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        </br>
+                        </br>
+                        <h1 class="brand-heading" style="font-size: 72px;">AERO-HPR</h1>
+                        <h2 class="intro-text">Human Perception and Recognition in Aerial Surveillance<br>
+                        </h2>
+                        <p style="margin-bottom: 10px; font-size: 22px; color: #fff;">
+                            <span id="countdown-display" style="font-weight: bold; color: #77c9d4;"></span>
+                        </p>
+                        <script>
+                            function updateCountdown() {
+                                var targetDate = new Date('2026-06-03T15:00:00Z'); // 9:00 AM MDT = 15:00 UTC
+                                var now = new Date();
+                                var diff = targetDate - now;
+                                if (diff > 0) {
+                                    var weeks = Math.floor(diff / (1000 * 60 * 60 * 24 * 7));
+                                    var days = Math.floor((diff % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+                                    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                                    var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                                    var timeStr = ('0' + hours).slice(-2) + ':' + ('0' + minutes).slice(-2) + ':' + ('0' + seconds).slice(-2);
+                                    document.getElementById('countdown-display').innerHTML =
+                                        '<span style="color: #77c9d4;">' + weeks + '</span> <span style="color: #aaa;">weeks</span> ' +
+                                        '<span style="color: #77c9d4;">' + days + '</span> <span style="color: #aaa;">days</span> ' +
+                                        '<span style="color: #fff;">' + timeStr + '</span>';
+                                } else {
+                                    document.getElementById('countdown-display').textContent = 'Workshop has started!';
+                                }
+                            }
+                            updateCountdown();
+                            setInterval(updateCountdown, 1000);
+                        </script>
+                        <p style="margin-bottom: 0;"><span style="color: rgb(168, 241, 255);"><b>June 3-4, 2026</b></span></p>
+                        <p style="margin-bottom: 0;">
+                            <span style="color: rgb(255, 248, 168);">
+                                <b>CVPR 2026 Workshop | Denver, Colorado, USA</b>
+                            </span>
+                        </p>
+                        <br>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section (includes Topics) -->
+    <section id="about" class="content-section text-left section-black">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2 class="text-center">About</h2>
+                <p>
+                    Welcome to <strong>AERO-HPR: The 1st Workshop on Human Perception and Recognition in Aerial Surveillance</strong> at CVPR 2026!
+                </p>
+                <p style="text-align: justify">
+                    Aerial person recognition has emerged as a critical research area at the intersection of computer vision and biometrics, driven by commercial UAV accessibility and applications ranging from search-and-rescue to public safety. However, state-of-the-art ground-based methods experience substantial performance degradation when applied to aerial data due to <span style="color: rgb(246, 255, 168);">extreme viewing angles, atmospheric turbulence, altitude-induced resolution gaps, and motion blur</span>.
+                </p>
+                <p style="text-align: justify">
+                    This workshop provides the <span style="color: rgb(246, 255, 168);">first dedicated forum</span> addressing the complete aerial person analysis pipeline—including detection, tracking, recognition (face, gait, whole-body), re-identification, action recognition, and group analysis—with explicit focus on aerial-specific technical challenges. We bring together researchers from computer vision, biometrics, and surveillance communities to advance novel methods, establish standardized evaluation protocols, and foster responsible development.
+                </p>
+                <p style="text-align: justify">
+                    The workshop features leading researchers from major initiatives including <b>IARPA BRIAR</b>, <b>DetReIDX</b>, and <b>AG-ReID</b>. <span style="color: rgb(246, 255, 168);">Ethics is a central workshop theme</span>, with 25% of program time dedicated to a panel discussion on "Responsible Development of Aerial Person Recognition Systems" addressing privacy protection, algorithmic fairness, and regulatory compliance.
+                </p>
+
+                <h3 class="text-center" style="margin-top: 40px;">Topics of Interest</h3>
+                <p style="text-align: center; margin-bottom: 20px;"><strong>Topics include, but are not limited to:</strong></p>
+                <ul class="topics-list">
+                    <li><b class="hl-green">Aerial Person Detection:</b> Small object detection, multi-scale detection, non-uniform distribution handling, low-resolution challenges</li>
+                    <li><b class="hl-green">Aerial Person Tracking:</b> Multi-object tracking, long-term tracking, occlusion handling, trajectory prediction, track association across cameras</li>
+                    <li><b class="hl-green">Aerial Face Recognition:</b> Face recognition at altitude, extreme pose variations, low-resolution face matching, atmospheric degradation</li>
+                    <li><b class="hl-green">Aerial Gait Recognition:</b> Motion pattern analysis, view-invariant gait features</li>
+                    <li><b class="hl-green">Aerial Wholebody Recognition:</b> Full-body biometric recognition, multi-biometric fusion</li>
+                    <li><b class="hl-green">Aerial Person Re-identification:</b> Cross-camera matching, aerial-ground re-identification, attribute-based recognition, long-term re-identification</li>
+                    <li><b class="hl-green">Aerial Soft Biometric Analysis:</b> Soft biometric attributes such as skin colour, eye colour, hair colour, height, weight, gender, race</li>
+                    <li><b class="hl-green">Aerial Human Action Recognition:</b> Activity recognition, gesture recognition, behavior analysis, anomaly detection</li>
+                    <li><b class="hl-green">Aerial Crowd Analysis:</b> Crowd counting, group activity recognition, social interaction analysis, crowd behavior modeling</li>
+                    <li><b class="hl-green">Aerial Imagery Generation:</b> Image generation, video generation, using synthetic imagery to benefit aerial data analysis</li>
+                    <li><b class="hl-green">Multimodal Large Language Models:</b> Training/utilizing LLMs for Aerial Image Analysis</li>
+                    <li><b class="hl-green">Ethics and Privacy of Aerial Surveillance:</b> Privacy protection, responsible deployment, algorithmic fairness, regulatory compliance</li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Call for Papers Section (includes Important Dates) -->
+    <section id="cfp" class="content-section text-left section-alt">
+            <div class="container">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2 class="text-center">Call for Papers</h2>
+                    <br>
+                    <p>We invite submissions on topics related to human perception and recognition in aerial surveillance, including but not limited to:</p>
+                    <ul style="font-size: 1.05em; line-height: 1.8;">
+                        <li>Novel methods for aerial person detection, tracking, and recognition</li>
+                        <li>Face, gait, and whole-body recognition from aerial imagery</li>
+                        <li>Aerial-ground person re-identification</li>
+                        <li>Action recognition and crowd analysis from UAV platforms</li>
+                        <li>Synthetic data generation for aerial surveillance</li>
+                        <li>Domain adaptation techniques for aerial-to-ground matching</li>
+                        <li>Privacy-preserving approaches and ethical considerations</li>
+                        <li>Benchmark datasets and evaluation protocols</li>
+                    </ul>
+
+                    <h4 style="color: #77c9d4; margin-top: 30px;">Submission Guidelines</h4>
+                    <ul style="font-size: 1.05em; line-height: 1.8;">
+                        <li>Papers should be formatted according to the <b>CVPR 2026 template</b></li>
+                        <li>Maximum <b>8 pages</b> (excluding references)</li>
+                        <li>Submissions should be made through <b>OpenReview</b> (link TBD)</li>
+                        <li>All submissions will be <b>double-blind reviewed</b></li>
+                    </ul>
+
+                    <div style="text-align: center; margin-top: 25px;">
+                        <a href="#" class="btn btn-default btn-lg">
+                            <i class="fa fa-upload"></i> Submit via OpenReview (Coming Soon)
+                        </a>
+                    </div>
+                    <!-- Important Dates -->
+                    <h3 class="text-center" style="margin-top: 40px;">Important Dates</h3>
+                    <br>
+                    <style>
+                        .timeline {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            position: relative;
+                            width: 100%;
+                            padding: 1rem 0;
+                        }
+                        .timeline::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 5%;
+                            right: 5%;
+                            height: 3px;
+                            background: linear-gradient(90deg, #77c9d4, #57a3b0);
+                            z-index: 1;
+                            box-shadow: 0 0 8px #77c9d4;
+                        }
+                        .timeline .step {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            text-align: center;
+                            flex: 1;
+                            position: relative;
+                            z-index: 2;
+                        }
+                        .timeline .step .date {
+                            padding-bottom: 8px;
+                            color: #fff;
+                            font-weight: bold;
+                            font-size: 0.95em;
+                            text-shadow: 0 0 5px rgba(119, 201, 212, 0.5);
+                        }
+                        .timeline .step .timestamp {
+                            background: #1a1a2e;
+                            padding: 8px;
+                            border-radius: 50%;
+                            border: 3px solid #77c9d4;
+                            width: 16px;
+                            height: 16px;
+                            box-shadow: 0 0 10px #77c9d4;
+                        }
+                        .timeline .step .label {
+                            margin-top: 8px;
+                            font-size: 0.85em;
+                            color: #77c9d4;
+                        }
+                        @media (max-width: 768px) {
+                            .timeline {
+                                flex-direction: column;
+                                align-items: flex-start;
+                            }
+                            .timeline::before {
+                                top: 0;
+                                bottom: 0;
+                                left: 20px;
+                                right: auto;
+                                width: 3px;
+                                height: auto;
+                            }
+                            .timeline .step {
+                                flex-direction: row;
+                                margin-bottom: 20px;
+                                width: 100%;
+                            }
+                            .timeline .step .timestamp {
+                                margin-right: 15px;
+                            }
+                            .timeline .step .date,
+                            .timeline .step .label {
+                                text-align: left;
+                            }
+                        }
+                    </style>
+                    <div class="timeline">
+                        <div class="step">
+                            <div class="date">Mar 15, 2026</div>
+                            <div class="timestamp"></div>
+                            <div class="label">Submission<br>Deadline</div>
+                        </div>
+                        <div class="step">
+                            <div class="date">Apr 7, 2026</div>
+                            <div class="timestamp"></div>
+                            <div class="label">Notification</div>
+                        </div>
+                        <div class="step">
+                            <div class="date">Apr 11, 2026</div>
+                            <div class="timestamp"></div>
+                            <div class="label">Camera-Ready</div>
+                        </div>
+                        <div class="step">
+                            <div class="date">Jun 3-4, 2026</div>
+                            <div class="timestamp" style="border-color: #f8d568; box-shadow: 0 0 10px #f8d568;"></div>
+                            <div class="label" style="color: #f8d568;">Workshop</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Program Section -->
+    <section id="program" class="content-section text-left section-black">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2 class="text-center">Workshop Program</h2>
+                    <p class="text-center"><b>Half-Day Workshop | June 3, 2026</b></p>
+
+                    <!-- Timezone Selector -->
+                    <div style="display: flex; align-items: center; justify-content: center; margin: 20px 0;">
+                        <label for="timezone" style="color: #fff; margin-right: 10px;">Select Time Zone:</label>
+                        <select id="timezone" onchange="updateScheduleTimes()" style="padding: 8px 15px; border-radius: 5px; background: #333; color: #fff; border: 1px solid #555;">
+                            <option value="America/Denver">Denver (MDT, UTC-6)</option>
+                            <option value="America/New_York">New York (EDT, UTC-4)</option>
+                            <option value="America/Los_Angeles">Los Angeles (PDT, UTC-7)</option>
+                            <option value="Europe/London">London (BST, UTC+1)</option>
+                            <option value="Europe/Paris">Paris (CEST, UTC+2)</option>
+                            <option value="Asia/Shanghai">Shanghai (CST, UTC+8)</option>
+                            <option value="Asia/Tokyo">Tokyo (JST, UTC+9)</option>
+                            <option value="Australia/Sydney">Sydney (AEST, UTC+10)</option>
+                        </select>
+                    </div>
+
+                    <!-- Add to Calendar Button -->
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=AERO-HPR+Workshop+%40+CVPR+2026&dates=20260603T150000Z/20260603T190000Z&details=Workshop+on+Human+Perception+and+Recognition+in+Aerial+Surveillance&location=Colorado+Convention+Center%2C+Denver%2C+CO&sf=true"
+                           target="_blank" class="btn btn-default" style="background: #77c9d4; color: #000; border: none;">
+                            <i class="fa fa-calendar-plus-o"></i> Add to Google Calendar
+                        </a>
+                    </div>
+                <div class="container" style="width:100%">
+                    <table class="table table-bordered" style="font-size: 1.1em; width: 100%;">
+                        <colgroup>
+                            <col style="width: 72%;">
+                            <col style="width: 28%;">
+                        </colgroup>
+                        <tbody>
+                            <tr style="background-color: #070707;">
+                                <th scope="col" style="text-align: center; vertical-align: middle;">
+                                    <b>Session</b>
+                                </th>
+                                <th scope="col" style="text-align: center; vertical-align: middle;">
+                                    <b>Time</b>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b><span class="hl-green">Opening Remarks</span></b>
+                                    <br> Workshop Overview
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time1">9:00 AM - 9:10 AM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b><span class="hl-green">Invited Talk - BRIAR Program</span></b>
+                                    <br> Speaker: Stergios Papadakis (IARPA BRIAR Program Manager)
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time2">9:10 AM - 9:40 AM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b><span class="hl-green">Sponsor Invited Talk - Shield AI</span></b>
+                                    <br> Speaker: Dr. Arnold Wiliem
+                                    <br> "Tiny Objects, Big Questions: What Industry Needs from Future Vision Research"
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time3">9:40 AM - 10:10 AM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Oral Presentations</b>
+                                    <br> 3 papers (8 min talk + 2 min Q&A each)
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time4">10:10 AM - 10:40 AM</span>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #1a1a2e;">
+                                <td>
+                                    <b><span class="hl-green">Coffee Break & Poster Session</span></b>
+                                    <br> 12-15 posters
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time5">10:40 AM - 11:10 AM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b><span class="hl-green">Invited Talk</span></b>
+                                    <br> Speaker: TBD
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time6">11:10 AM - 11:40 AM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Oral Presentations</b>
+                                    <br> 3 papers (8 min talk + 2 min Q&A each)
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time7">11:40 AM - 12:10 PM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b><span class="hl-green">Panel Discussion</span></b>
+                                    <br> "Ethics, Deployment, and Future Directions in Aerial Person Recognition"
+                                    <br> Moderator + 5 panelists
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time8">12:10 PM - 12:55 PM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b><span class="hl-green">Closing</span></b>
+                                    <br> Best Paper Awards & Closing Remarks
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time9">12:55 PM - 1:00 PM</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Invited Speakers Section -->
+    <section id="speakers" class="content-section text-left section-alt">
+            <div class="container">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2 class="text-center">Invited Speakers</h2>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="person-image text-center">
+                                <img src="img/speakers/stergios_papadakis.jpg" class="person-avatar" width="150" height="150" style="border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="person-meta text-center">
+                                <span class="person-name"><a href="#" target="_blank" style="color: #77c9d4;">Stergios Papadakis</a></span>
+                                <br />
+                                <span class="person-affliation">IARPA BRIAR Program Manager</span>
+                                <br />
+                                <span style="font-size: 0.9em; color: #aaa;"><i>Keynote: BRIAR Program Overview</i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="person-image text-center">
+                                <img src="img/speakers/arnold_wiliem.jpg" class="person-avatar" width="150" height="150" style="border-radius: 50%; object-fit: cover;">
+                            </div>
+                            <div class="person-meta text-center">
+                                <span class="person-name"><a href="#" target="_blank" style="color: #77c9d4;">Dr. Arnold Wiliem</a></span>
+                                <br />
+                                <span class="person-affliation">Shield AI, Australia</span>
+                                <br />
+                                <span style="font-size: 0.9em; color: #aaa;"><i>Sponsor Talk: Industry Perspectives</i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="person-image text-center">
+                                <img src="img/speakers/tbd.jpg" class="person-avatar" width="150" height="150" style="border-radius: 50%; object-fit: cover; background: #333;">
+                            </div>
+                            <div class="person-meta text-center">
+                                <span class="person-name" style="color: #77c9d4;">TBD</span>
+                                <br />
+                                <span class="person-affliation">To be announced</span>
+                                <br />
+                                <span style="font-size: 0.9em; color: #aaa;"><i>Invited Talk</i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+    </section>
+
+    <!-- Organizers Section (includes Venue) -->
+    <section id="organizers" class="content-section text-center section-black">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2>Organizing Committee</h2>
+                <br>
+                <div class="row" style="display: flex; flex-wrap: wrap; justify-content: center;">
+                    <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 30px;">
+                        <div class="person-image">
+                            <img src="img/organizers/arun_ross.jpg" class="person-avatar" width="120" height="120" style="border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div class="person-meta" style="margin-top: 10px;">
+                            <span class="person-name"><a href="https://rossarun.com/" target="_blank">Arun Ross</a></span>
+                            <br />
+                            <span class="person-affliation" style="font-size: 0.85em;">Michigan State Univ.</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 30px;">
+                        <div class="person-image">
+                            <img src="img/organizers/xiaoming_liu.jpg" class="person-avatar" width="120" height="120" style="border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div class="person-meta" style="margin-top: 10px;">
+                            <span class="person-name"><a href="http://www.cse.msu.edu/~liuxm/" target="_blank">Xiaoming Liu</a></span>
+                            <br />
+                            <span class="person-affliation" style="font-size: 0.85em;">Michigan State Univ.</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 30px;">
+                        <div class="person-image">
+                            <img src="img/organizers/hugo_proenca.jpg" class="person-avatar" width="120" height="120" style="border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div class="person-meta" style="margin-top: 10px;">
+                            <span class="person-name"><a href="http://www.di.ubi.pt/~hugomcp/" target="_blank">Hugo Proenca</a></span>
+                            <br />
+                            <span class="person-affliation" style="font-size: 0.85em;">Univ. Beira Interior</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 30px;">
+                        <div class="person-image">
+                            <img src="img/organizers/vitomir_struc.jpg" class="person-avatar" width="120" height="120" style="border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div class="person-meta" style="margin-top: 10px;">
+                            <span class="person-name"><a href="http://luks.fe.uni-lj.si/sl/osebje/vitoMDbs/" target="_blank">Vitomir Struc</a></span>
+                            <br />
+                            <span class="person-affliation" style="font-size: 0.85em;">Univ. Ljubljana</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 30px;">
+                        <div class="person-image">
+                            <img src="img/organizers/clinton_fookes.jpg" class="person-avatar" width="120" height="120" style="border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div class="person-meta" style="margin-top: 10px;">
+                            <span class="person-name"><a href="https://www.qut.edu.au/about/our-people/academic-profiles/c.fookes" target="_blank">Clinton Fookes</a></span>
+                            <br />
+                            <span class="person-affliation" style="font-size: 0.85em;">QUT, Australia</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 30px;">
+                        <div class="person-image">
+                            <img src="img/organizers/kien_nguyen.jpg" class="person-avatar" width="120" height="120" style="border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div class="person-meta" style="margin-top: 10px;">
+                            <span class="person-name"><a href="https://www.qut.edu.au/about/our-people/academic-profiles/kien.nguyen" target="_blank">Kien Nguyen</a></span>
+                            <br />
+                            <span class="person-affliation" style="font-size: 0.85em;">QUT, Australia</span>
+                            <br />
+                            <span style="font-size: 0.8em; color: #77c9d4;"><i>(Primary Contact)</i></span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 30px;">
+                        <div class="person-image">
+                            <img src="img/organizers/dana_michalski.jpg" class="person-avatar" width="120" height="120" style="border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div class="person-meta" style="margin-top: 10px;">
+                            <span class="person-name"><a href="#" target="_blank">Dana Michalski</a></span>
+                            <br />
+                            <span class="person-affliation" style="font-size: 0.85em;">DSTG, Australia</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 30px;">
+                        <div class="person-image">
+                            <img src="img/organizers/huy_nguyen.jpg" class="person-avatar" width="120" height="120" style="border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div class="person-meta" style="margin-top: 10px;">
+                            <span class="person-name"><a href="#" target="_blank">Huy Nguyen</a></span>
+                            <br />
+                            <span class="person-affliation" style="font-size: 0.85em;">QUT, Australia</span>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-4 col-xs-6" style="margin-bottom: 30px;">
+                        <div class="person-image">
+                            <img src="img/organizers/arnold_wiliem.jpg" class="person-avatar" width="120" height="120" style="border-radius: 50%; object-fit: cover;">
+                        </div>
+                        <div class="person-meta" style="margin-top: 10px;">
+                            <span class="person-name"><a href="#" target="_blank">Arnold Wiliem</a></span>
+                            <br />
+                            <span class="person-affliation" style="font-size: 0.85em;">Shield AI, Australia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venue -->
+                <h3 class="text-center" style="margin-top: 40px;">Venue</h3>
+                <br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3067.844856069192!2d-104.99555699999999!3d39.743135699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c78d17bd9d871%3A0x580ecf50af57c3cf!2sColorado%20Convention%20Center!5e0!3m2!1sen!2sus!4v1760037150522!5m2!1sen!2sus" width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="col-md-6" style="text-align: left;">
+                        <h4 style="color: #77c9d4; margin-top: 0;">Colorado Convention Center</h4>
+                        <p style="margin-bottom: 8px;"><i class="fa fa-map-marker"></i> 700 14th St, Denver, CO 80202, USA</p>
+                        <p style="margin-bottom: 8px;">AERO-HPR 2026 will be held at the <b>Colorado Convention Center</b> in Denver, Colorado, in conjunction with <a href="https://cvpr.thecvf.com/" target="_blank" style="color: #77c9d4;">CVPR 2026</a>.</p>
+                        <p style="margin-bottom: 8px;"><i class="fa fa-calendar"></i> <b>June 3-4, 2026</b> (Half-day workshop)</p>
+                        <p style="margin-bottom: 0;"><i class="fa fa-clock-o"></i> 9:00 AM - 1:00 PM (MDT)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section text-center section-alt">
+            <div class="container">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Contact</h2>
+                    <p>For questions and inquiries, please contact us at:</p>
+                    <p><a href="mailto:aero-hpr@googlegroups.com">aero-hpr@googlegroups.com</a></p>
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://cvpr.thecvf.com/" class="btn btn-default btn-lg" target="_blank"><i class="fa fa-globe fa-fw"></i> <span class="network-name">CVPR 2026</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section class="content-section text-center section-black" style="padding-top: 40px !important; padding-bottom: 40px !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h3>Sponsors</h3>
+                    <br>
+                    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 40px;">
+                        <a href="https://shield.ai/" target="_blank">
+                            <img src="img/sponsors/shield_ai.png" alt="Shield AI" style="max-height: 80px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; AERO-HPR Workshop 2026 | CVPR 2026 Workshop on Human Perception and Recognition in Aerial Surveillance</p>
+            <p style="font-size: 0.85em; color: #888;">June 3-4, 2026 | Denver, Colorado, USA</p>
+            <p style="font-size: 0.8em; color: #666; margin-top: 15px;">
+                This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="color: #77c9d4;">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+                <br>
+                It borrows the source code of <a href="https://github.com/cveu/cveu.github.io" style="color: #77c9d4;">this website</a>.
+            </p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/jquery.widget.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+    <script src="js/metro.min.js"></script>
+    <script src="js/metro-countdown.js"></script>
+
+    <!-- Timezone -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.7/jstz.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/moment-timezone.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Schedule Timezone Converter -->
+    <script>
+        // Schedule times in UTC (June 3, 2026)
+        var scheduleEvents = [
+            { id: 'time1', startUTC: '2026-06-03T15:00:00Z', endUTC: '2026-06-03T15:10:00Z' },  // Opening
+            { id: 'time2', startUTC: '2026-06-03T15:10:00Z', endUTC: '2026-06-03T15:40:00Z' },  // BRIAR Talk
+            { id: 'time3', startUTC: '2026-06-03T15:40:00Z', endUTC: '2026-06-03T16:10:00Z' },  // Sponsor Talk
+            { id: 'time4', startUTC: '2026-06-03T16:10:00Z', endUTC: '2026-06-03T16:40:00Z' },  // Oral 1
+            { id: 'time5', startUTC: '2026-06-03T16:40:00Z', endUTC: '2026-06-03T17:10:00Z' },  // Coffee Break
+            { id: 'time6', startUTC: '2026-06-03T17:10:00Z', endUTC: '2026-06-03T17:40:00Z' },  // Invited Talk
+            { id: 'time7', startUTC: '2026-06-03T17:40:00Z', endUTC: '2026-06-03T18:10:00Z' },  // Oral 2
+            { id: 'time8', startUTC: '2026-06-03T18:10:00Z', endUTC: '2026-06-03T18:55:00Z' },  // Panel
+            { id: 'time9', startUTC: '2026-06-03T18:55:00Z', endUTC: '2026-06-03T19:00:00Z' }   // Closing
+        ];
+
+        function updateScheduleTimes() {
+            var timezone = document.getElementById('timezone').value;
+            var dateOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
+
+            scheduleEvents.forEach(function(event) {
+                var startDate = new Date(event.startUTC);
+                var endDate = new Date(event.endUTC);
+                var startTime = startDate.toLocaleTimeString('en-US', { timeZone: timezone, hour: '2-digit', minute: '2-digit', hour12: true });
+                var endTime = endDate.toLocaleTimeString('en-US', { timeZone: timezone, hour: '2-digit', minute: '2-digit', hour12: true });
+                var elem = document.getElementById(event.id);
+                if (elem) {
+                    elem.textContent = startTime + ' - ' + endTime;
+                }
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateScheduleTimes();
+        });
+    </script>
+
+    <!-- Loading Screen Handler -->
+    <script>
+        window.addEventListener('load', function() {
+            var loader = document.getElementById('loading-screen');
+            loader.classList.add('fade-out');
+            setTimeout(function() {
+                loader.style.display = 'none';
+            }, 500);
+        });
+    </script>
+
+</body>
+</html>
