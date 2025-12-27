@@ -171,7 +171,7 @@
             }
 
             /* Center organizer cards on mobile */
-            #organizers .row {
+            #organizers > .container > .row > .col-lg-10 > .row {
                 justify-content: center !important;
                 display: flex !important;
                 flex-wrap: wrap !important;
@@ -182,21 +182,37 @@
             #organizers .col-xs-6 {
                 width: 50% !important;
                 text-align: center !important;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: flex-start !important;
             }
 
-            #organizers .person-image,
-            #organizers .person-meta {
+            #organizers .col-md-2 .person-image,
+            #organizers .col-sm-4 .person-image,
+            #organizers .col-xs-6 .person-image {
                 text-align: center !important;
-                width: 100%;
+                width: 100% !important;
+                display: flex !important;
+                justify-content: center !important;
+            }
+
+            #organizers .col-md-2 .person-meta,
+            #organizers .col-sm-4 .person-meta,
+            #organizers .col-xs-6 .person-meta {
+                text-align: center !important;
+                width: 100% !important;
             }
 
             #organizers .person-name,
-            #organizers .person-affliation {
-                display: block;
+            #organizers .person-name a,
+            #organizers .person-affliation,
+            #organizers .col-md-2 span,
+            #organizers .col-sm-4 span,
+            #organizers .col-xs-6 span {
+                display: block !important;
                 text-align: center !important;
+                width: 100% !important;
             }
 
             /* Venue section - stack map and info vertically on mobile */
