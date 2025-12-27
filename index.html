@@ -170,39 +170,27 @@
                 padding-right: 10px !important;
             }
 
-            /* Center organizer cards on mobile */
+            /* Center organizer cards on mobile - same approach as speakers */
             #organizers .organizer-row {
-                display: block !important;
-                text-align: center !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
             }
 
             #organizers .organizer-row > div {
                 width: 50% !important;
-                display: inline-block !important;
-                vertical-align: top !important;
                 float: none !important;
-                text-align: center !important;
-            }
-
-            /* Center profile content within each card */
-            #organizers .person-image {
                 display: flex !important;
-                justify-content: center !important;
+                flex-direction: column !important;
                 align-items: center !important;
             }
 
-            #organizers .person-image img {
-                margin: 0 auto !important;
-                display: block !important;
-            }
-
-            #organizers .person-meta {
-                text-align: center !important;
-            }
-
-            #organizers .person-meta span,
-            #organizers .person-meta a {
-                display: block !important;
+            #organizers .organizer-row .person-image,
+            #organizers .organizer-row .person-meta {
+                width: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
                 text-align: center !important;
             }
 
