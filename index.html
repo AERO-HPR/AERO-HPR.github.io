@@ -170,7 +170,7 @@
                 padding-right: 10px !important;
             }
 
-            /* Center organizer cards on mobile - same approach as speakers */
+            /* Center organizer cards on mobile - override style.css margin-left: 25% */
             #organizers .organizer-row {
                 display: flex !important;
                 flex-wrap: wrap !important;
@@ -179,6 +179,7 @@
 
             #organizers .organizer-row > div {
                 width: 50% !important;
+                margin-left: 0 !important;
                 float: none !important;
                 display: flex !important;
                 flex-direction: column !important;
