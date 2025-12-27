@@ -173,11 +173,18 @@
             /* Center organizer cards on mobile */
             #organizers .row {
                 justify-content: center !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
             }
 
+            #organizers .col-md-2,
+            #organizers .col-sm-4,
             #organizers .col-xs-6 {
                 width: 50% !important;
                 text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
 
             /* Venue section - stack map and info vertically on mobile */
@@ -241,10 +248,63 @@
             .table-responsive {
                 overflow-x: auto;
             }
+
+            /* Submit button - allow text wrap on mobile */
+            #cfp .btn {
+                white-space: normal !important;
+                word-wrap: break-word;
+                max-width: 100%;
+                padding: 12px 20px;
+            }
+
+            /* Important Dates Timeline - vertical on mobile */
+            .timeline {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+
+            .timeline::before {
+                top: 0 !important;
+                bottom: 0 !important;
+                left: 20px !important;
+                right: auto !important;
+                width: 3px !important;
+                height: auto !important;
+            }
+
+            .timeline .step {
+                flex-direction: row !important;
+                margin-bottom: 25px !important;
+                width: 100% !important;
+                text-align: left !important;
+            }
+
+            .timeline .step .timestamp {
+                margin-right: 20px !important;
+                margin-left: 12px !important;
+                flex-shrink: 0;
+            }
+
+            .timeline .step .date {
+                padding-bottom: 0 !important;
+                text-align: left !important;
+            }
+
+            .timeline .step .label {
+                margin-top: 5px !important;
+                text-align: left !important;
+            }
+
+            .timeline .step .date,
+            .timeline .step .label {
+                display: block;
+            }
         }
 
         @media (max-width: 480px) {
             /* Even smaller screens - single column for organizers */
+            #organizers .col-md-2,
+            #organizers .col-sm-4,
             #organizers .col-xs-6 {
                 width: 100% !important;
             }
