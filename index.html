@@ -484,29 +484,204 @@
                 <div class="col-lg-10 col-lg-offset-1">
                     <h2 class="text-center">Call for Papers</h2>
                     <br>
-                    <div style="max-width: 800px; margin: 0 auto; text-align: left;">
-                        <p>We invite submissions on topics related to human perception and recognition in aerial surveillance, including but not limited to:</p>
-                        <ul style="font-size: 1.05em; line-height: 1.8;">
-                            <li>Novel methods for aerial person detection, tracking, and recognition</li>
-                            <li>Face, gait, and whole-body recognition from aerial imagery</li>
-                            <li>Aerial-ground person re-identification</li>
-                            <li>Action recognition and crowd analysis from UAV platforms</li>
-                            <li>Synthetic data generation for aerial surveillance</li>
-                            <li>Domain adaptation techniques for aerial-to-ground matching</li>
-                            <li>Privacy-preserving approaches and ethical considerations</li>
-                            <li>Benchmark datasets and evaluation protocols</li>
-                        </ul>
+                    <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+                        <p style="text-align: center;">We invite submissions on topics related to human perception and recognition in aerial surveillance. Please select the appropriate track when submitting via OpenReview.</p>
+                    </div>
 
-                        <h4 style="color: #77c9d4; margin-top: 30px;">Submission Guidelines</h4>
-                        <ul style="font-size: 1.05em; line-height: 1.8;">
-                            <li>Papers should be formatted according to the <b>CVPR 2026 template</b></li>
-                            <li>Maximum <b>8 pages</b> (excluding references)</li>
-                            <li>Submissions should be made through <b>OpenReview</b> (link TBD)</li>
-                            <li>All submissions will be <b>double-blind reviewed</b></li>
+                    <!-- Submission Tracks - Two Cards Side by Side -->
+                    <h3 class="text-center" style="margin-top: 30px; margin-bottom: 25px;">Submission Tracks</h3>
+                    <style>
+                        .track-cards {
+                            display: flex;
+                            gap: 25px;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            max-width: 1000px;
+                            margin: 0 auto;
+                        }
+                        .track-card {
+                            flex: 1;
+                            min-width: 300px;
+                            max-width: 450px;
+                            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+                            border: 1px solid #77c9d4;
+                            border-radius: 12px;
+                            padding: 25px;
+                            text-align: left;
+                            transition: transform 0.3s ease, box-shadow 0.3s ease;
+                        }
+                        .track-card:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0 10px 30px rgba(119, 201, 212, 0.2);
+                        }
+                        .track-card-header {
+                            display: flex;
+                            align-items: center;
+                            margin-bottom: 15px;
+                        }
+                        .track-card-icon {
+                            width: 50px;
+                            height: 50px;
+                            background: rgba(119, 201, 212, 0.15);
+                            border-radius: 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-right: 15px;
+                        }
+                        .track-card-icon i {
+                            font-size: 24px;
+                            color: #77c9d4;
+                        }
+                        .track-card h4 {
+                            color: #77c9d4;
+                            margin: 0;
+                            font-size: 1.3em;
+                        }
+                        .track-card-badge {
+                            display: inline-block;
+                            background: #77c9d4;
+                            color: #000;
+                            padding: 3px 10px;
+                            border-radius: 15px;
+                            font-size: 0.75em;
+                            font-weight: bold;
+                            margin-left: 10px;
+                        }
+                        .track-card-badge.non-archival {
+                            background: #f8d568;
+                        }
+                        .track-card p {
+                            color: #ccc;
+                            font-size: 0.95em;
+                            line-height: 1.6;
+                            margin-bottom: 15px;
+                        }
+                        .track-card ul {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                        }
+                        .track-card ul li {
+                            color: #aaa;
+                            font-size: 0.9em;
+                            padding: 6px 0;
+                            border-bottom: 1px solid rgba(119, 201, 212, 0.1);
+                            display: flex;
+                            align-items: flex-start;
+                        }
+                        .track-card ul li:last-child {
+                            border-bottom: none;
+                        }
+                        .track-card ul li i {
+                            color: #77c9d4;
+                            margin-right: 10px;
+                            margin-top: 3px;
+                            font-size: 0.85em;
+                        }
+                        .requirements-card {
+                            max-width: 900px;
+                            margin: 30px auto 0;
+                            background: rgba(119, 201, 212, 0.08);
+                            border: 1px solid rgba(119, 201, 212, 0.3);
+                            border-radius: 12px;
+                            padding: 25px 30px;
+                            text-align: left;
+                        }
+                        .requirements-card h4 {
+                            color: #77c9d4;
+                            margin-top: 0;
+                            margin-bottom: 15px;
+                            display: flex;
+                            align-items: center;
+                        }
+                        .requirements-card h4 i {
+                            margin-right: 10px;
+                        }
+                        .requirements-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                            gap: 12px;
+                        }
+                        .requirements-grid li {
+                            color: #ccc;
+                            font-size: 0.95em;
+                            display: flex;
+                            align-items: flex-start;
+                        }
+                        .requirements-grid li i {
+                            color: #77c9d4;
+                            margin-right: 8px;
+                            margin-top: 3px;
+                        }
+                        @media (max-width: 768px) {
+                            .track-cards {
+                                flex-direction: column;
+                                align-items: center;
+                            }
+                            .track-card {
+                                max-width: 100%;
+                            }
+                            .requirements-grid {
+                                grid-template-columns: 1fr;
+                            }
+                        }
+                    </style>
+                    <div class="track-cards">
+                        <!-- Archival Track -->
+                        <div class="track-card">
+                            <div class="track-card-header">
+                                <div class="track-card-icon">
+                                    <i class="fa fa-book"></i>
+                                </div>
+                                <div>
+                                    <h4>Archival Track <span class="track-card-badge">Proceedings</span></h4>
+                                </div>
+                            </div>
+                            <p>Papers accepted to this track will be published in the official CVPR 2026 workshop proceedings.</p>
+                            <ul>
+                                <li><i class="fa fa-file-text"></i> Up to <b>8 pages</b> (excluding references)</li>
+                                <li><i class="fa fa-book"></i> Included in official CVPR proceedings</li>
+                                <li><i class="fa fa-plus-circle"></i> Supplementary material allowed</li>
+                                <li><i class="fa fa-microphone"></i> Selected papers for oral presentation</li>
+                                <li><i class="fa fa-calendar"></i> Deadline: <b>March 15, 2026</b></li>
+                            </ul>
+                        </div>
+                        <!-- Non-Archival Track -->
+                        <div class="track-card">
+                            <div class="track-card-header">
+                                <div class="track-card-icon">
+                                    <i class="fa fa-lightbulb-o"></i>
+                                </div>
+                                <div>
+                                    <h4>Non-Archival Track <span class="track-card-badge non-archival">Extended Abstract</span></h4>
+                                </div>
+                            </div>
+                            <p>Share ongoing work, preliminary results, or papers published elsewhere. Not included in proceedings—can be submitted to future venues.</p>
+                            <ul>
+                                <li><i class="fa fa-file-text"></i> Up to <b>4 pages</b> (excluding references)</li>
+                                <li><i class="fa fa-refresh"></i> Work-in-progress & late-breaking results welcome</li>
+                                <li><i class="fa fa-check-circle"></i> Previously published work accepted</li>
+                                <li><i class="fa fa-comments"></i> Receive feedback to strengthen your work</li>
+                                <li><i class="fa fa-calendar"></i> Deadline: <b>March 15, 2026</b></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Submission Requirements -->
+                    <div class="requirements-card">
+                        <h4><i class="fa fa-list-alt"></i> Submission Requirements</h4>
+                        <ul class="requirements-grid" style="list-style: none; padding: 0; margin: 0;">
+                            <li><i class="fa fa-check"></i> Use the <b>CVPR 2026 Author Kit</b> (LaTeX/Word)</li>
+                            <li><i class="fa fa-check"></i> All submissions must be <b>anonymized</b> for double-blind review</li>
+                            <li><i class="fa fa-check"></i> Submit via <b>OpenReview</b> and select appropriate track</li>
+                            <li><i class="fa fa-check"></i> Each submission reviewed by <b>at least 3 reviewers</b></li>
+                            <li><i class="fa fa-check"></i> Use <b>institutional email</b> for faster OpenReview registration</li>
+                            <li><i class="fa fa-check"></i> Single-stage review process (no rebuttal stage)</li>
                         </ul>
                     </div>
 
-                    <div style="text-align: center; margin-top: 25px;">
+                    <div style="text-align: center; margin-top: 30px;">
                         <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/AERO-HPR" target="_blank" class="btn btn-default btn-lg">
                             <i class="fa fa-upload"></i> Submit via OpenReview
                         </a>
