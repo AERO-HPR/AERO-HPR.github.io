@@ -598,22 +598,6 @@
                         .requirements-card h4 i {
                             margin-right: 10px;
                         }
-                        .requirements-grid {
-                            display: grid;
-                            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                            gap: 12px;
-                        }
-                        .requirements-grid li {
-                            color: #ccc;
-                            font-size: 0.95em;
-                            display: flex;
-                            align-items: flex-start;
-                        }
-                        .requirements-grid li i {
-                            color: #77c9d4;
-                            margin-right: 8px;
-                            margin-top: 3px;
-                        }
                         @media (max-width: 768px) {
                             .track-cards {
                                 flex-direction: column;
@@ -622,8 +606,8 @@
                             .track-card {
                                 max-width: 100%;
                             }
-                            .requirements-grid {
-                                grid-template-columns: 1fr;
+                            .requirements-card ul {
+                                columns: 1 !important;
                             }
                         }
                     </style>
@@ -640,11 +624,10 @@
                             </div>
                             <p>Papers accepted to this track will be published in the official CVPR 2026 workshop proceedings.</p>
                             <ul>
-                                <li><i class="fa fa-file-text"></i> Up to <b>8 pages</b> (excluding references)</li>
-                                <li><i class="fa fa-book"></i> Included in official CVPR proceedings</li>
-                                <li><i class="fa fa-plus-circle"></i> Supplementary material allowed</li>
-                                <li><i class="fa fa-microphone"></i> Selected papers for oral presentation</li>
-                                <li><i class="fa fa-calendar"></i> Deadline: <b>March 15, 2026</b></li>
+                                <li><i class="fa fa-file-text"></i>&nbsp; Up to <b>8 pages</b> (excluding references)</li>
+                                <li><i class="fa fa-book"></i>&nbsp; Included in official CVPR proceedings</li>
+                                <li><i class="fa fa-plus-circle"></i>&nbsp; Supplementary material allowed</li>
+                                <li><i class="fa fa-microphone"></i>&nbsp; Selected papers for oral presentation</li>
                             </ul>
                         </div>
                         <!-- Non-Archival Track -->
@@ -659,25 +642,24 @@
                             </div>
                             <p>Share ongoing work, preliminary results, or papers published elsewhere. Not included in proceedings—can be submitted to future venues.</p>
                             <ul>
-                                <li><i class="fa fa-file-text"></i> Up to <b>4 pages</b> (excluding references)</li>
-                                <li><i class="fa fa-refresh"></i> Work-in-progress & late-breaking results welcome</li>
-                                <li><i class="fa fa-check-circle"></i> Previously published work accepted</li>
-                                <li><i class="fa fa-comments"></i> Receive feedback to strengthen your work</li>
-                                <li><i class="fa fa-calendar"></i> Deadline: <b>March 15, 2026</b></li>
+                                <li><i class="fa fa-file-text"></i>&nbsp; Up to <b>4 pages</b> (excluding references)</li>
+                                <li><i class="fa fa-refresh"></i>&nbsp; Work-in-progress & late-breaking results welcome</li>
+                                <li><i class="fa fa-check-circle"></i>&nbsp; Previously published work accepted</li>
+                                <li><i class="fa fa-comments"></i>&nbsp; Receive feedback to strengthen your work</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Submission Requirements -->
                     <div class="requirements-card">
-                        <h4><i class="fa fa-list-alt"></i> Submission Requirements</h4>
-                        <ul class="requirements-grid" style="list-style: none; padding: 0; margin: 0;">
-                            <li><i class="fa fa-check"></i> Use the <b>CVPR 2026 Author Kit</b> (LaTeX/Word)</li>
-                            <li><i class="fa fa-check"></i> All submissions must be <b>anonymized</b> for double-blind review</li>
-                            <li><i class="fa fa-check"></i> Submit via <b>OpenReview</b> and select appropriate track</li>
-                            <li><i class="fa fa-check"></i> Each submission reviewed by <b>at least 3 reviewers</b></li>
-                            <li><i class="fa fa-check"></i> Use <b>institutional email</b> for faster OpenReview registration</li>
-                            <li><i class="fa fa-check"></i> Single-stage review process (no rebuttal stage)</li>
+                        <h4><i class="fa fa-list-alt"></i>&nbsp; Submission Requirements</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 40px;">
+                            <li style="color: #ccc; padding: 8px 0; break-inside: avoid;"><i class="fa fa-check" style="color: #77c9d4; margin-right: 10px;"></i>Use the <b>CVPR 2026 Author Kit</b> (LaTeX/Word)</li>
+                            <li style="color: #ccc; padding: 8px 0; break-inside: avoid;"><i class="fa fa-check" style="color: #77c9d4; margin-right: 10px;"></i>All submissions must be <b>anonymized</b></li>
+                            <li style="color: #ccc; padding: 8px 0; break-inside: avoid;"><i class="fa fa-check" style="color: #77c9d4; margin-right: 10px;"></i>Submit via <b>OpenReview</b> (select track)</li>
+                            <li style="color: #ccc; padding: 8px 0; break-inside: avoid;"><i class="fa fa-check" style="color: #77c9d4; margin-right: 10px;"></i>Reviewed by <b>at least 3 reviewers</b></li>
+                            <li style="color: #ccc; padding: 8px 0; break-inside: avoid;"><i class="fa fa-check" style="color: #77c9d4; margin-right: 10px;"></i>Use <b>institutional email</b> for OpenReview</li>
+                            <li style="color: #ccc; padding: 8px 0; break-inside: avoid;"><i class="fa fa-check" style="color: #77c9d4; margin-right: 10px;"></i>Single-stage review (no rebuttal)</li>
                         </ul>
                     </div>
 
