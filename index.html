@@ -265,48 +265,9 @@
                 padding: 12px 20px;
             }
 
-            /* Important Dates Timeline - vertical on mobile */
-            .timeline {
-                flex-direction: column !important;
-                align-items: flex-start !important;
-            }
-
-            .timeline::before {
-                top: 0 !important;
-                bottom: 0 !important;
-                left: 20px !important;
-                right: auto !important;
-                width: 3px !important;
-                height: auto !important;
-            }
-
-            .timeline .step {
-                flex-direction: row !important;
-                margin-bottom: 25px !important;
-                width: 100% !important;
-                text-align: left !important;
-            }
-
-            .timeline .step .timestamp {
-                margin-right: 20px !important;
-                margin-left: 12px !important;
-                flex-shrink: 0;
-            }
-
-            .timeline .step .date {
-                padding-bottom: 0 !important;
-                text-align: left !important;
-            }
-
-            .timeline .step .label {
-                margin-top: 5px !important;
-                text-align: left !important;
-            }
-
-            .timeline .step .date,
-            .timeline .step .label {
-                display: block;
-            }
+            /* Important Dates Timeline - mobile */
+            .timeline-desktop { display: none !important; }
+            .timeline-mobile { display: block !important; }
         }
 
         @media (max-width: 480px) {
@@ -549,7 +510,7 @@
                             margin-left: 10px;
                         }
                         .track-card-badge.non-archival {
-                            background: #f8d568;
+                            background: #e8a87c;
                         }
                         .track-card p {
                             color: #ccc;
@@ -688,6 +649,10 @@
                             z-index: 1;
                             box-shadow: 0 0 8px #77c9d4;
                         }
+                        .timeline.amber::before {
+                            background: linear-gradient(90deg, #e8a87c, #d4956a);
+                            box-shadow: 0 0 8px #e8a87c;
+                        }
                         .timeline .step {
                             display: flex;
                             flex-direction: column;
@@ -713,69 +678,144 @@
                             height: 16px;
                             box-shadow: 0 0 10px #77c9d4;
                         }
+                        .timeline .step .timestamp.amber {
+                            border-color: #e8a87c;
+                            box-shadow: 0 0 10px #e8a87c;
+                        }
                         .timeline .step .label {
                             margin-top: 8px;
                             font-size: 0.85em;
                             color: #77c9d4;
                         }
-                        @media (max-width: 768px) {
-                            .timeline {
-                                flex-direction: column;
-                                align-items: flex-start;
-                            }
-                            .timeline::before {
-                                top: 0;
-                                bottom: 0;
-                                left: 20px;
-                                right: auto;
-                                width: 3px;
-                                height: auto;
-                            }
-                            .timeline .step {
-                                flex-direction: row;
-                                margin-bottom: 20px;
-                                width: 100%;
-                            }
-                            .timeline .step .timestamp {
-                                margin-right: 15px;
-                            }
-                            .timeline .step .date,
-                            .timeline .step .label {
-                                text-align: left;
-                            }
+                        .timeline .step .label.amber {
+                            color: #e8a87c;
                         }
+                        .timeline-track-title {
+                            font-size: 0.85em;
+                            font-weight: bold;
+                            color: #77c9d4;
+                            margin-bottom: 0;
+                            padding-left: 5%;
+                        }
+                        .timeline-track-title.amber {
+                            color: #e8a87c;
+                            margin-top: 25px;
+                        }
+                        @media (max-width: 768px) {
+                            .timeline-desktop { display: none !important; }
+                            .timeline-mobile { display: block !important; }
+                        }
+
+                        /* ===== Mobile: Vertical Timeline ===== */
+                        .timeline-mobile { display: none; }
+                        .timeline-mobile .tm-title {
+                            font-size: 0.85em;
+                            font-weight: bold;
+                            margin: 16px 0 8px 0;
+                            padding: 3px 10px;
+                            border-radius: 4px;
+                            display: inline-block;
+                        }
+                        .timeline-mobile .tm-row {
+                            display: flex;
+                            align-items: center;
+                            margin: 0 0 12px 10px;
+                        }
+                        .timeline-mobile .tm-dot {
+                            width: 14px; height: 14px;
+                            border-radius: 50%;
+                            border: 3px solid #77c9d4;
+                            background: #1a1a2e;
+                            flex-shrink: 0;
+                            margin-right: 14px;
+                            box-shadow: 0 0 8px rgba(119,201,212,0.5);
+                        }
+                        .timeline-mobile .tm-dot.amber { border-color: #e8a87c; box-shadow: 0 0 8px rgba(232,168,124,0.5); }
+                        .timeline-mobile .tm-dot.gold { border-color: #f8d568; box-shadow: 0 0 8px rgba(248,213,104,0.5); }
+                        .timeline-mobile .tm-date { color: #fff; font-weight: bold; font-size: 0.9em; min-width: 110px; }
+                        .timeline-mobile .tm-label { font-size: 0.85em; }
+                        .timeline-mobile .tm-label.cyan { color: #77c9d4; }
+                        .timeline-mobile .tm-label.amber { color: #e8a87c; }
+                        .timeline-mobile .tm-label.gold { color: #f8d568; }
                     </style>
-                    <div class="timeline">
-                        <div class="step">
-                            <div class="date">Jan 11, 2026</div>
-                            <div class="timestamp"></div>
-                            <div class="label">Submission<br>Opens</div>
+
+                    <!-- Desktop: Two separate timelines -->
+                    <div class="timeline-desktop">
+                        <div class="timeline-track-title">Archival Track (Proceedings)</div>
+                        <div class="timeline">
+                            <div class="step">
+                                <div class="date">Jan 11, 2026</div>
+                                <div class="timestamp"></div>
+                                <div class="label">Submission<br>Opens</div>
+                            </div>
+                            <div class="step">
+                                <div class="date">Mar 5, 2026</div>
+                                <div class="timestamp"></div>
+                                <div class="label">Abstract<br>Registration</div>
+                            </div>
+                            <div class="step">
+                                <div class="date">Mar 10, 2026</div>
+                                <div class="timestamp"></div>
+                                <div class="label">Submission<br>Deadline</div>
+                            </div>
+                            <div class="step">
+                                <div class="date">Mar 17, 2026</div>
+                                <div class="timestamp"></div>
+                                <div class="label">Notification</div>
+                            </div>
+                            <div class="step">
+                                <div class="date">Apr 10, 2026</div>
+                                <div class="timestamp"></div>
+                                <div class="label">Camera-Ready</div>
+                            </div>
+                            <div class="step">
+                                <div class="date">Jun 3-4, 2026</div>
+                                <div class="timestamp" style="border-color: #f8d568; box-shadow: 0 0 10px #f8d568;"></div>
+                                <div class="label" style="color: #f8d568;">Workshop</div>
+                            </div>
                         </div>
-                        <div class="step">
-                            <div class="date">Mar 5, 2026</div>
-                            <div class="timestamp"></div>
-                            <div class="label">Abstract<br>Registration</div>
+
+                        <div class="timeline-track-title amber">Non-Archival Track (Extended Abstract)</div>
+                        <div class="timeline amber">
+                            <div class="step">
+                                <div class="date">Jan 11, 2026</div>
+                                <div class="timestamp amber"></div>
+                                <div class="label amber">Submission<br>Opens</div>
+                            </div>
+                            <div class="step">
+                                <div class="date">Apr 20, 2026</div>
+                                <div class="timestamp amber"></div>
+                                <div class="label amber">Submission<br>Deadline</div>
+                            </div>
+                            <div class="step">
+                                <div class="date">May 4, 2026</div>
+                                <div class="timestamp amber"></div>
+                                <div class="label amber">Notification</div>
+                            </div>
+                            <div class="step">
+                                <div class="date">Jun 3-4, 2026</div>
+                                <div class="timestamp" style="border-color: #f8d568; box-shadow: 0 0 10px #f8d568;"></div>
+                                <div class="label" style="color: #f8d568;">Workshop</div>
+                            </div>
                         </div>
-                        <div class="step">
-                            <div class="date">Mar 10, 2026</div>
-                            <div class="timestamp"></div>
-                            <div class="label">Submission<br>Deadline</div>
-                        </div>
-                        <div class="step">
-                            <div class="date">Mar 17, 2026</div>
-                            <div class="timestamp"></div>
-                            <div class="label">Notification</div>
-                        </div>
-                        <div class="step">
-                            <div class="date">Apr 10, 2026</div>
-                            <div class="timestamp"></div>
-                            <div class="label">Camera-Ready</div>
-                        </div>
-                        <div class="step">
-                            <div class="date">Jun 3-4, 2026</div>
-                            <div class="timestamp" style="border-color: #f8d568; box-shadow: 0 0 10px #f8d568;"></div>
-                            <div class="label" style="color: #f8d568;">Workshop</div>
-                        </div>
+                    </div>
+
+                    <!-- Mobile: Vertical timeline -->
+                    <div class="timeline-mobile">
+                        <div class="tm-title" style="color:#77c9d4; border:1px solid #77c9d4;">Archival Track (Proceedings)</div>
+                        <div class="tm-row"><div class="tm-dot"></div><div class="tm-date">Jan 11, 2026</div><div class="tm-label cyan">Submission Opens</div></div>
+                        <div class="tm-row"><div class="tm-dot"></div><div class="tm-date">Mar 5, 2026</div><div class="tm-label cyan">Abstract Registration</div></div>
+                        <div class="tm-row"><div class="tm-dot"></div><div class="tm-date">Mar 10, 2026</div><div class="tm-label cyan">Submission Deadline</div></div>
+                        <div class="tm-row"><div class="tm-dot"></div><div class="tm-date">Mar 17, 2026</div><div class="tm-label cyan">Notification</div></div>
+                        <div class="tm-row"><div class="tm-dot"></div><div class="tm-date">Apr 10, 2026</div><div class="tm-label cyan">Camera-Ready</div></div>
+
+                        <div class="tm-title" style="color:#e8a87c; border:1px solid #e8a87c; margin-top:16px;">Non-Archival Track (Extended Abstract)</div>
+                        <div class="tm-row"><div class="tm-dot amber"></div><div class="tm-date">Jan 11, 2026</div><div class="tm-label amber">Submission Opens</div></div>
+                        <div class="tm-row"><div class="tm-dot amber"></div><div class="tm-date">Apr 20, 2026</div><div class="tm-label amber">Submission Deadline</div></div>
+                        <div class="tm-row"><div class="tm-dot amber"></div><div class="tm-date">May 4, 2026</div><div class="tm-label amber">Notification</div></div>
+
+                        <div class="tm-title" style="color:#f8d568; border:1px solid #f8d568; margin-top:16px;">Workshop</div>
+                        <div class="tm-row"><div class="tm-dot gold"></div><div class="tm-date">Jun 3-4, 2026</div><div class="tm-label gold">Workshop Day</div></div>
                     </div>
                 </div>
             </div>
