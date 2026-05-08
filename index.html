@@ -836,18 +836,45 @@
                     <h2 class="text-center">Accepted Papers</h2>
 
                     <style>
-                        .accepted-overview-card {
-                            max-width: 820px;
-                            margin: 25px auto 40px;
+                        .accepted-stat-row {
+                            display: flex;
+                            gap: 25px;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            max-width: 900px;
+                            margin: 25px auto 50px;
+                        }
+                        .accepted-stat-card {
+                            flex: 1;
+                            min-width: 260px;
+                            max-width: 380px;
                             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
                             border: 1px solid #77c9d4;
                             border-radius: 12px;
-                            padding: 22px 28px;
-                            color: #ddd;
-                            line-height: 1.6;
+                            padding: 28px 24px;
+                            text-align: center;
+                            transition: transform 0.3s ease, box-shadow 0.3s ease;
                         }
-                        .accepted-overview-card b {
+                        .accepted-stat-card:hover {
+                            transform: translateY(-4px);
+                            box-shadow: 0 10px 30px rgba(119, 201, 212, 0.2);
+                        }
+                        .accepted-stat-number {
+                            font-size: 3.5em;
+                            font-weight: 700;
+                            color: #77c9d4;
+                            line-height: 1;
+                            margin-bottom: 10px;
+                        }
+                        .accepted-stat-label {
+                            font-size: 1.05em;
+                            font-weight: 600;
                             color: #fff;
+                            margin-bottom: 6px;
+                        }
+                        .accepted-stat-sub {
+                            font-size: 0.9em;
+                            color: #aaa;
                         }
                         .accepted-track-heading {
                             margin-top: 40px;
@@ -897,11 +924,17 @@
                         }
                     </style>
 
-                    <div class="accepted-overview-card">
-                        <b>Overview.</b> AERO-HPR 2026 has accepted <b>9 papers</b> in total &mdash;
-                        <b>4 in the Proceedings Track</b> (archival, included in the CVPR 2026 workshop proceedings)
-                        and <b>5 in the Non-Proceedings Track</b> (non-archival workshop posters).
-                        All accepted papers will be presented as posters at the workshop.
+                    <div class="accepted-stat-row">
+                        <div class="accepted-stat-card">
+                            <div class="accepted-stat-number">4</div>
+                            <div class="accepted-stat-label">Proceedings Track Papers</div>
+                            <div class="accepted-stat-sub">Archival workshop proceedings</div>
+                        </div>
+                        <div class="accepted-stat-card">
+                            <div class="accepted-stat-number">5</div>
+                            <div class="accepted-stat-label">Non-Proceedings Track Papers</div>
+                            <div class="accepted-stat-sub">Non-archival workshop posters</div>
+                        </div>
                     </div>
 
                     <h3 class="accepted-track-heading">Proceedings Track</h3>
