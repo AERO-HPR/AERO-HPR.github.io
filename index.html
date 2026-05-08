@@ -835,23 +835,24 @@
                 <div class="col-lg-10 col-lg-offset-1">
                     <h2 class="text-center">Accepted Papers</h2>
 
-                    <p class="text-center" style="max-width: 760px; margin: 0 auto 30px;">
-                        <b>Overview.</b> AERO-HPR 2026 has accepted <b>9 papers</b> in total —
-                        <b>4 in the Proceedings Track</b> (archival, included in the CVPR 2026 workshop proceedings)
-                        and <b>5 in the Non-Proceedings Track</b> (non-archival workshop posters).
-                        All accepted papers will be presented as posters at the workshop.
-                    </p>
-
                     <style>
+                        .accepted-overview-card {
+                            max-width: 820px;
+                            margin: 25px auto 40px;
+                            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+                            border: 1px solid #77c9d4;
+                            border-radius: 12px;
+                            padding: 22px 28px;
+                            color: #ddd;
+                            line-height: 1.6;
+                        }
+                        .accepted-overview-card b {
+                            color: #fff;
+                        }
                         .accepted-track-heading {
                             margin-top: 40px;
                             padding-bottom: 8px;
                             border-bottom: 1px solid rgba(119, 201, 212, 0.4);
-                        }
-                        .accepted-track-heading small {
-                            color: #aaa;
-                            font-size: 0.6em;
-                            margin-left: 10px;
                         }
                         .accepted-papers-list {
                             padding-left: 25px;
@@ -864,12 +865,13 @@
                             font-weight: 600;
                         }
                         .accepted-papers-list .paper-authors {
+                            display: block;
                             color: #ccc;
                             font-style: italic;
                             font-size: 0.95em;
                         }
                         .paper-tags {
-                            display: inline-flex;
+                            display: flex;
                             gap: 8px;
                             margin-top: 6px;
                             flex-wrap: wrap;
@@ -895,10 +897,17 @@
                         }
                     </style>
 
-                    <h3 class="accepted-track-heading">Proceedings Track <small>4 papers · archival workshop proceedings</small></h3>
+                    <div class="accepted-overview-card">
+                        <b>Overview.</b> AERO-HPR 2026 has accepted <b>9 papers</b> in total &mdash;
+                        <b>4 in the Proceedings Track</b> (archival, included in the CVPR 2026 workshop proceedings)
+                        and <b>5 in the Non-Proceedings Track</b> (non-archival workshop posters).
+                        All accepted papers will be presented as posters at the workshop.
+                    </div>
+
+                    <h3 class="accepted-track-heading">Proceedings Track</h3>
                     <ol class="accepted-papers-list">
                         <li>
-                            <span class="paper-title">Scale-Aware Vision-Language Adaptation for Extreme Far-Distance Video Person Re-identification</span><br>
+                            <span class="paper-title">Scale-Aware Vision-Language Adaptation for Extreme Far-Distance Video Person Re-identification</span>
                             <span class="paper-authors">Ashwat Rajbhandari, Bharatesh Chakravarthi</span>
                             <div class="paper-tags">
                                 <span class="paper-tag paper-tag-poster">Poster</span>
@@ -906,7 +915,7 @@
                             </div>
                         </li>
                         <li>
-                            <span class="paper-title">Enhancing Aerial Pedestrian Detection via High-Resolution P2 Feature Integration in YOLOv12</span><br>
+                            <span class="paper-title">Enhancing Aerial Pedestrian Detection via High-Resolution P2 Feature Integration in YOLOv12</span>
                             <span class="paper-authors">Sukesh Babu V S, Rahul Raman, Sambit Bakshi</span>
                             <div class="paper-tags">
                                 <span class="paper-tag paper-tag-poster">Poster</span>
@@ -914,7 +923,7 @@
                             </div>
                         </li>
                         <li>
-                            <span class="paper-title">SAFE-Net: Scale-Aware Feature Enhancement for Aerial Person Detection in Flood Disaster Imagery</span><br>
+                            <span class="paper-title">SAFE-Net: Scale-Aware Feature Enhancement for Aerial Person Detection in Flood Disaster Imagery</span>
                             <span class="paper-authors">Arun Kumar S, Komuravelli Prashanth, Janipireddy Ganesh Mouli, Gorthi Rama Krishna Sai Subrahmanyam</span>
                             <div class="paper-tags">
                                 <span class="paper-tag paper-tag-poster">Poster</span>
@@ -922,7 +931,7 @@
                             </div>
                         </li>
                         <li>
-                            <span class="paper-title">Quantifying Operational Drivers of Multimodal Biometric Verification in Aerial Surveillance</span><br>
+                            <span class="paper-title">Quantifying Operational Drivers of Multimodal Biometric Verification in Aerial Surveillance</span>
                             <span class="paper-authors">Alina Peluso, David S. Bolme, Gavin Glenn, Jairus Hines, Nicholas Burchfield, Andrew Duncan, Youngrock Yoon, Joel Robert Gray Brogan, Deniz Aykac, Ryan Shivers, Gio Pascascio, Leanne Thompson, Scott Dolvin, David Cornett</span>
                             <div class="paper-tags">
                                 <span class="paper-tag paper-tag-poster">Poster</span>
@@ -931,10 +940,10 @@
                         </li>
                     </ol>
 
-                    <h3 class="accepted-track-heading">Non-Proceedings Track <small>5 papers · non-archival workshop posters</small></h3>
+                    <h3 class="accepted-track-heading">Non-Proceedings Track</h3>
                     <ol class="accepted-papers-list">
                         <li>
-                            <span class="paper-title">Multimodal LLMs for Context-Aware Human Activity Recognition in Aerial Surveillance</span><br>
+                            <span class="paper-title">Multimodal LLMs for Context-Aware Human Activity Recognition in Aerial Surveillance</span>
                             <span class="paper-authors">Mahule Roy, Subhas Roy</span>
                             <div class="paper-tags">
                                 <span class="paper-tag paper-tag-poster">Poster</span>
@@ -942,7 +951,7 @@
                             </div>
                         </li>
                         <li>
-                            <span class="paper-title">ARIA-ReID: Altitude-Robust Identity Association for Aerial-to-Ground Person Re-Identification</span><br>
+                            <span class="paper-title">ARIA-ReID: Altitude-Robust Identity Association for Aerial-to-Ground Person Re-Identification</span>
                             <span class="paper-authors">Kaustubh S. Bukkapatnam, Laksh Patel, Siddharth Karuturi</span>
                             <div class="paper-tags">
                                 <span class="paper-tag paper-tag-poster">Poster</span>
@@ -950,7 +959,7 @@
                             </div>
                         </li>
                         <li>
-                            <span class="paper-title">BReSK: Bootstrapped Contrastive Representation Learning for Skeleton-Based Action Understanding</span><br>
+                            <span class="paper-title">BReSK: Bootstrapped Contrastive Representation Learning for Skeleton-Based Action Understanding</span>
                             <span class="paper-authors">Mahmoud Ali, Di Yang, Snehashis Majhi, Quan Kong, Gianpiero Francesca, Francois Bremond</span>
                             <div class="paper-tags">
                                 <span class="paper-tag paper-tag-poster">Poster</span>
@@ -958,7 +967,7 @@
                             </div>
                         </li>
                         <li>
-                            <span class="paper-title">Compositional Preference Learning for Composed Person Retrieval</span><br>
+                            <span class="paper-title">Compositional Preference Learning for Composed Person Retrieval</span>
                             <span class="paper-authors">Seonghyeon Yun, Sooyoung Yang, Myungjoo Kang</span>
                             <div class="paper-tags">
                                 <span class="paper-tag paper-tag-poster">Poster</span>
@@ -966,7 +975,7 @@
                             </div>
                         </li>
                         <li>
-                            <span class="paper-title">Dual-Stream Multimodal Person Re-Identification Under Overhead Surveillance: RGB and Depth Perspectives</span><br>
+                            <span class="paper-title">Dual-Stream Multimodal Person Re-Identification Under Overhead Surveillance: RGB and Depth Perspectives</span>
                             <span class="paper-authors">Md Rashidunnabi, Hugo Proenca, Jo&atilde;o C. Neves, Vasco Lopes, Kailash A. Hambarde</span>
                             <div class="paper-tags">
                                 <span class="paper-tag paper-tag-poster">Poster</span>
