@@ -17,9 +17,15 @@ $(window).scroll(function() {
 $(function() {
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
+        var hash = $anchor.attr('href');
         $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
+            scrollTop: $(hash).offset().top
         }, 1500, 'easeInOutExpo');
+        if (history.pushState) {
+            history.pushState(null, null, hash);
+        } else {
+            location.hash = hash;
+        }
         event.preventDefault();
     });
 });
