@@ -1332,6 +1332,10 @@
             loader.classList.add('fade-out');
             setTimeout(function() {
                 loader.style.display = 'none';
+                if (window.location.hash) {
+                    var target = document.querySelector(window.location.hash);
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             }, 500);
         });
     </script>
