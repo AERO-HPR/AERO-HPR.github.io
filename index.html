@@ -834,7 +834,13 @@
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
                     <h2 class="text-center">Accepted Papers</h2>
-                    <p class="text-center">9 papers accepted to AERO-HPR 2026 — full submissions and reviews are available on <a href="https://openreview.net/group?id=thecvf.com/CVPR/2026/Workshop/AERO-HPR" target="_blank">OpenReview</a>.</p>
+
+                    <p class="text-center" style="max-width: 760px; margin: 0 auto 30px;">
+                        <b>Overview.</b> AERO-HPR 2026 has accepted <b>9 papers</b> in total —
+                        <b>4 in the Proceedings Track</b> (archival, included in the CVPR 2026 workshop proceedings)
+                        and <b>5 in the Non-Proceedings Track</b> (non-archival workshop posters).
+                        All accepted papers will be presented as posters at the workshop.
+                    </p>
 
                     <style>
                         .accepted-track-heading {
@@ -851,8 +857,8 @@
                             padding-left: 25px;
                         }
                         .accepted-papers-list > li {
-                            margin-bottom: 18px;
-                            line-height: 1.45;
+                            margin-bottom: 22px;
+                            line-height: 1.5;
                         }
                         .accepted-papers-list .paper-title {
                             font-weight: 600;
@@ -862,96 +868,110 @@
                             font-style: italic;
                             font-size: 0.95em;
                         }
-                        .accepted-papers-list .paper-links {
-                            font-size: 0.9em;
+                        .paper-tags {
+                            display: inline-flex;
+                            gap: 8px;
+                            margin-top: 6px;
+                            flex-wrap: wrap;
                         }
-                        .accepted-papers-list .paper-links a {
+                        .paper-tag {
+                            display: inline-block;
+                            padding: 3px 10px;
+                            font-size: 0.8em;
+                            border-radius: 4px;
+                            font-weight: 500;
+                            letter-spacing: 0.3px;
+                        }
+                        .paper-tag-poster {
+                            background: rgba(119, 201, 212, 0.15);
                             color: #77c9d4;
-                            margin-right: 8px;
-                            text-decoration: none;
+                            border: 1px solid rgba(119, 201, 212, 0.5);
                         }
-                        .accepted-papers-list .paper-links a:hover {
-                            text-decoration: underline;
+                        .paper-tag-pdf-disabled {
+                            background: rgba(255, 255, 255, 0.05);
+                            color: #777;
+                            border: 1px solid rgba(255, 255, 255, 0.15);
+                            cursor: not-allowed;
                         }
                     </style>
 
-                    <h3 class="accepted-track-heading">Proceedings Track <small>4 papers · archival, included in CVPR 2026 proceedings</small></h3>
+                    <h3 class="accepted-track-heading">Proceedings Track <small>4 papers · archival workshop proceedings</small></h3>
                     <ol class="accepted-papers-list">
                         <li>
                             <span class="paper-title">Scale-Aware Vision-Language Adaptation for Extreme Far-Distance Video Person Re-identification</span><br>
-                            <span class="paper-authors">Ashwat Rajbhandari, Bharatesh Chakravarthi</span><br>
-                            <span class="paper-links">
-                                <a href="https://openreview.net/forum?id=tqsCGSiRU8" target="_blank">[OpenReview]</a>
-                                <a href="https://openreview.net/pdf?id=tqsCGSiRU8" target="_blank">[PDF]</a>
-                            </span>
+                            <span class="paper-authors">Ashwat Rajbhandari, Bharatesh Chakravarthi</span>
+                            <div class="paper-tags">
+                                <span class="paper-tag paper-tag-poster">Poster</span>
+                                <span class="paper-tag paper-tag-pdf-disabled">PDF (coming soon)</span>
+                            </div>
                         </li>
                         <li>
                             <span class="paper-title">Enhancing Aerial Pedestrian Detection via High-Resolution P2 Feature Integration in YOLOv12</span><br>
-                            <span class="paper-authors">Sukesh Babu V S, Rahul Raman, Sambit Bakshi</span><br>
-                            <span class="paper-links">
-                                <a href="https://openreview.net/forum?id=TGxbJjSrb6" target="_blank">[OpenReview]</a>
-                                <a href="https://openreview.net/pdf?id=TGxbJjSrb6" target="_blank">[PDF]</a>
-                            </span>
+                            <span class="paper-authors">Sukesh Babu V S, Rahul Raman, Sambit Bakshi</span>
+                            <div class="paper-tags">
+                                <span class="paper-tag paper-tag-poster">Poster</span>
+                                <span class="paper-tag paper-tag-pdf-disabled">PDF (coming soon)</span>
+                            </div>
                         </li>
                         <li>
                             <span class="paper-title">SAFE-Net: Scale-Aware Feature Enhancement for Aerial Person Detection in Flood Disaster Imagery</span><br>
-                            <span class="paper-authors">Arun Kumar S, Komuravelli Prashanth, Janipireddy Ganesh Mouli, Gorthi Rama Krishna Sai Subrahmanyam</span><br>
-                            <span class="paper-links">
-                                <a href="https://openreview.net/forum?id=I7WjvgppBq" target="_blank">[OpenReview]</a>
-                                <a href="https://openreview.net/pdf?id=I7WjvgppBq" target="_blank">[PDF]</a>
-                            </span>
+                            <span class="paper-authors">Arun Kumar S, Komuravelli Prashanth, Janipireddy Ganesh Mouli, Gorthi Rama Krishna Sai Subrahmanyam</span>
+                            <div class="paper-tags">
+                                <span class="paper-tag paper-tag-poster">Poster</span>
+                                <span class="paper-tag paper-tag-pdf-disabled">PDF (coming soon)</span>
+                            </div>
                         </li>
                         <li>
                             <span class="paper-title">Quantifying Operational Drivers of Multimodal Biometric Verification in Aerial Surveillance</span><br>
-                            <span class="paper-authors">Alina Peluso, David S. Bolme, Gavin Glenn, Jairus Hines, Nicholas Burchfield, Andrew Duncan, Youngrock Yoon, Joel Robert Gray Brogan, Deniz Aykac, Ryan Shivers, Gio Pascascio, Leanne Thompson, Scott Dolvin, David Cornett</span><br>
-                            <span class="paper-links">
-                                <a href="https://openreview.net/forum?id=y0KcGqjW8z" target="_blank">[OpenReview]</a>
-                                <a href="https://openreview.net/pdf?id=y0KcGqjW8z" target="_blank">[PDF]</a>
-                            </span>
+                            <span class="paper-authors">Alina Peluso, David S. Bolme, Gavin Glenn, Jairus Hines, Nicholas Burchfield, Andrew Duncan, Youngrock Yoon, Joel Robert Gray Brogan, Deniz Aykac, Ryan Shivers, Gio Pascascio, Leanne Thompson, Scott Dolvin, David Cornett</span>
+                            <div class="paper-tags">
+                                <span class="paper-tag paper-tag-poster">Poster</span>
+                                <span class="paper-tag paper-tag-pdf-disabled">PDF (coming soon)</span>
+                            </div>
                         </li>
                     </ol>
 
-                    <h3 class="accepted-track-heading">Non-Proceedings Track <small>5 papers · non-archival, workshop posters</small></h3>
+                    <h3 class="accepted-track-heading">Non-Proceedings Track <small>5 papers · non-archival workshop posters</small></h3>
                     <ol class="accepted-papers-list">
                         <li>
                             <span class="paper-title">Multimodal LLMs for Context-Aware Human Activity Recognition in Aerial Surveillance</span><br>
-                            <span class="paper-authors">Mahule Roy, Subhas Roy</span><br>
-                            <span class="paper-links">
-                                <a href="https://openreview.net/forum?id=AlznPDmfYG" target="_blank">[OpenReview]</a>
-                                <a href="https://openreview.net/pdf?id=AlznPDmfYG" target="_blank">[PDF]</a>
-                            </span>
+                            <span class="paper-authors">Mahule Roy, Subhas Roy</span>
+                            <div class="paper-tags">
+                                <span class="paper-tag paper-tag-poster">Poster</span>
+                                <span class="paper-tag paper-tag-pdf-disabled">PDF (coming soon)</span>
+                            </div>
                         </li>
                         <li>
                             <span class="paper-title">ARIA-ReID: Altitude-Robust Identity Association for Aerial-to-Ground Person Re-Identification</span><br>
-                            <span class="paper-authors">Kaustubh S. Bukkapatnam, Laksh Patel, Siddharth Karuturi</span><br>
-                            <span class="paper-links">
-                                <a href="https://openreview.net/forum?id=Y6Bjrkqtkb" target="_blank">[OpenReview]</a>
-                                <a href="https://openreview.net/pdf?id=Y6Bjrkqtkb" target="_blank">[PDF]</a>
-                            </span>
+                            <span class="paper-authors">Kaustubh S. Bukkapatnam, Laksh Patel, Siddharth Karuturi</span>
+                            <div class="paper-tags">
+                                <span class="paper-tag paper-tag-poster">Poster</span>
+                                <span class="paper-tag paper-tag-pdf-disabled">PDF (coming soon)</span>
+                            </div>
                         </li>
                         <li>
                             <span class="paper-title">BReSK: Bootstrapped Contrastive Representation Learning for Skeleton-Based Action Understanding</span><br>
-                            <span class="paper-authors">Mahmoud Ali, Di Yang, Snehashis Majhi, Quan Kong, Gianpiero Francesca, Francois Bremond</span><br>
-                            <span class="paper-links">
-                                <a href="https://openreview.net/forum?id=ddGa8pcDTW" target="_blank">[OpenReview]</a>
-                                <a href="https://openreview.net/pdf?id=ddGa8pcDTW" target="_blank">[PDF]</a>
-                            </span>
+                            <span class="paper-authors">Mahmoud Ali, Di Yang, Snehashis Majhi, Quan Kong, Gianpiero Francesca, Francois Bremond</span>
+                            <div class="paper-tags">
+                                <span class="paper-tag paper-tag-poster">Poster</span>
+                                <span class="paper-tag paper-tag-pdf-disabled">PDF (coming soon)</span>
+                            </div>
                         </li>
                         <li>
                             <span class="paper-title">Compositional Preference Learning for Composed Person Retrieval</span><br>
-                            <span class="paper-authors">Seonghyeon Yun, Sooyoung Yang, Myungjoo Kang</span><br>
-                            <span class="paper-links">
-                                <a href="https://openreview.net/forum?id=13ZrkMn0kS" target="_blank">[OpenReview]</a>
-                                <a href="https://openreview.net/pdf?id=13ZrkMn0kS" target="_blank">[PDF]</a>
-                            </span>
+                            <span class="paper-authors">Seonghyeon Yun, Sooyoung Yang, Myungjoo Kang</span>
+                            <div class="paper-tags">
+                                <span class="paper-tag paper-tag-poster">Poster</span>
+                                <span class="paper-tag paper-tag-pdf-disabled">PDF (coming soon)</span>
+                            </div>
                         </li>
                         <li>
                             <span class="paper-title">Dual-Stream Multimodal Person Re-Identification Under Overhead Surveillance: RGB and Depth Perspectives</span><br>
-                            <span class="paper-authors">Md Rashidunnabi, Hugo Proenca, Jo&atilde;o C. Neves, Vasco Lopes, Kailash A. Hambarde</span><br>
-                            <span class="paper-links">
-                                <a href="https://openreview.net/forum?id=76Mfu5I1C3" target="_blank">[OpenReview]</a>
-                                <a href="https://openreview.net/pdf?id=76Mfu5I1C3" target="_blank">[PDF]</a>
-                            </span>
+                            <span class="paper-authors">Md Rashidunnabi, Hugo Proenca, Jo&atilde;o C. Neves, Vasco Lopes, Kailash A. Hambarde</span>
+                            <div class="paper-tags">
+                                <span class="paper-tag paper-tag-poster">Poster</span>
+                                <span class="paper-tag paper-tag-pdf-disabled">PDF (coming soon)</span>
+                            </div>
                         </li>
                     </ol>
                 </div>
