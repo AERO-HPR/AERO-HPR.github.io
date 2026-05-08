@@ -327,10 +327,10 @@
                         <a class="page-scroll" href="#cfp">Call for Papers</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#accepted-papers">Accepted Papers</a>
+                        <a class="page-scroll" href="#program">Program</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#program">Program</a>
+                        <a class="page-scroll" href="#accepted-papers">Accepted Papers</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#speakers">Speakers</a>
@@ -828,8 +828,142 @@
             </div>
     </section>
 
+    <!-- Program Section -->
+    <section id="program" class="content-section text-left section-navy">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2 class="text-center">Workshop Program</h2>
+                    <p class="text-center"><b>Half-Day Workshop | June 3, 2026 | Room 110 (AM Session, 8:00 AM - 1:00 PM)</b></p>
+
+                    <!-- Timezone Selector -->
+                    <div style="display: flex; align-items: center; justify-content: center; margin: 20px 0;">
+                        <label for="timezone" style="color: #fff; margin-right: 10px;">Select Time Zone:</label>
+                        <select id="timezone" onchange="updateScheduleTimes()" style="padding: 8px 15px; border-radius: 5px; background: #333; color: #fff; border: 1px solid #555;">
+                            <option value="America/Denver">Denver (MDT, UTC-6)</option>
+                            <option value="America/New_York">New York (EDT, UTC-4)</option>
+                            <option value="America/Los_Angeles">Los Angeles (PDT, UTC-7)</option>
+                            <option value="Europe/London">London (BST, UTC+1)</option>
+                            <option value="Europe/Paris">Paris (CEST, UTC+2)</option>
+                            <option value="Asia/Shanghai">Shanghai (CST, UTC+8)</option>
+                            <option value="Asia/Tokyo">Tokyo (JST, UTC+9)</option>
+                            <option value="Australia/Sydney">Sydney (AEST, UTC+10)</option>
+                        </select>
+                    </div>
+
+                    <!-- Add to Calendar Button -->
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=AERO-HPR+Workshop+%40+CVPR+2026&dates=20260603T140000Z/20260603T190000Z&details=Workshop+on+Human+Perception+and+Recognition+in+Aerial+Surveillance%0ARoom+110%0APosters+in+Exhibit+Hall+A&location=Colorado+Convention+Center%2C+Room+110%2C+Denver%2C+CO&sf=true"
+                           target="_blank" class="btn btn-default" style="background: #77c9d4; color: #000; border: none;">
+                            <i class="fa fa-calendar-plus-o"></i> Add to Google Calendar
+                        </a>
+                    </div>
+                <div class="container" style="width:100%">
+                    <table class="table table-bordered" style="font-size: 1.1em; width: 100%;">
+                        <colgroup>
+                            <col style="width: 72%;">
+                            <col style="width: 28%;">
+                        </colgroup>
+                        <tbody>
+                            <tr style="background-color: #070707;">
+                                <th scope="col" style="text-align: center; vertical-align: middle;">
+                                    <b>Session</b>
+                                </th>
+                                <th scope="col" style="text-align: center; vertical-align: middle;">
+                                    <b>Time</b>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b><span class="hl-green">Opening Remarks</span></b>
+                                    <br> Workshop Overview
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time1">9:00 AM - 9:10 AM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b><span class="hl-green">Invited Talk - BRIAR Program</span></b>
+                                    <br> Speaker: Dr. David Bolme (Oak Ridge National Laboratory)
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time2">9:10 AM - 9:40 AM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b><span class="hl-green">Sponsor Invited Talk - Shield AI</span></b>
+                                    <br> Speaker: Dr. Arnold Wiliem
+                                    <br> "Tiny Objects, Big Questions: What Industry Needs from Future Vision Research"
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time3">9:40 AM - 10:10 AM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Oral Presentations</b>
+                                    <br> 3 papers (8 min talk + 2 min Q&A each)
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time4">10:10 AM - 10:40 AM</span>
+                                </td>
+                            </tr>
+                            <tr style="background-color: #1a1a2e;">
+                                <td>
+                                    <b><span class="hl-green">Coffee Break & Poster Session</span></b>
+                                    <br> Posters located in <b>Exhibit Hall A</b>
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time5">10:40 AM - 11:10 AM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b><span class="hl-green">Invited Talk - Advancing Miniature Aerial Robotics</span></b>
+                                    <br> Speaker: Dr. Pakpong Chirarattananon, University of Toronto
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time6">11:10 AM - 11:40 AM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b><span class="hl-green">Invited Talk - BRIAR Program (Extended)</span></b>
+                                    <br> Speaker: Dr. Xiaoming Liu, UNC Chapel Hill
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time7">11:40 AM - 12:10 PM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>Oral Presentations</b>
+                                    <br> 3 papers (8 min talk + 2 min Q&A each)
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time8">12:10 PM - 12:40 PM</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b><span class="hl-green">Closing</span></b>
+                                    <br> Best Paper Awards & Closing Remarks
+                                </td>
+                                <td style="text-align:center; vertical-align:middle;">
+                                    <span id="time9">12:40 PM - 1:00 PM</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+        </div>
+    </section>
+
     <!-- Accepted Papers Section -->
-    <section id="accepted-papers" class="content-section text-left section-alt">
+    <section id="accepted-papers" class="content-section text-left section-dark">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
@@ -1016,179 +1150,6 @@
                             </div>
                         </li>
                     </ol>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Program Section -->
-    <section id="program" class="content-section text-left section-navy">
-        <div class="container">
-        <div class="row">
-            <div class="col-lg-10 col-lg-offset-1">
-                <h2 class="text-center">Workshop Program</h2>
-                    <p class="text-center"><b>Half-Day Workshop | June 3, 2026 | Room 110 (AM Session, 8:00 AM - 1:00 PM)</b></p>
-
-                    <!-- Timezone Selector -->
-                    <div style="display: flex; align-items: center; justify-content: center; margin: 20px 0;">
-                        <label for="timezone" style="color: #fff; margin-right: 10px;">Select Time Zone:</label>
-                        <select id="timezone" onchange="updateScheduleTimes()" style="padding: 8px 15px; border-radius: 5px; background: #333; color: #fff; border: 1px solid #555;">
-                            <option value="America/Denver">Denver (MDT, UTC-6)</option>
-                            <option value="America/New_York">New York (EDT, UTC-4)</option>
-                            <option value="America/Los_Angeles">Los Angeles (PDT, UTC-7)</option>
-                            <option value="Europe/London">London (BST, UTC+1)</option>
-                            <option value="Europe/Paris">Paris (CEST, UTC+2)</option>
-                            <option value="Asia/Shanghai">Shanghai (CST, UTC+8)</option>
-                            <option value="Asia/Tokyo">Tokyo (JST, UTC+9)</option>
-                            <option value="Australia/Sydney">Sydney (AEST, UTC+10)</option>
-                        </select>
-                    </div>
-
-                    <!-- Add to Calendar Button -->
-                    <div style="text-align: center; margin-bottom: 20px;">
-                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=AERO-HPR+Workshop+%40+CVPR+2026&dates=20260603T140000Z/20260603T190000Z&details=Workshop+on+Human+Perception+and+Recognition+in+Aerial+Surveillance%0ARoom+110%0APosters+in+Exhibit+Hall+A&location=Colorado+Convention+Center%2C+Room+110%2C+Denver%2C+CO&sf=true"
-                           target="_blank" class="btn btn-default" style="background: #77c9d4; color: #000; border: none;">
-                            <i class="fa fa-calendar-plus-o"></i> Add to Google Calendar
-                        </a>
-                    </div>
-                <div class="container" style="width:100%">
-                    <table class="table table-bordered" style="font-size: 1.1em; width: 100%;">
-                        <colgroup>
-                            <col style="width: 72%;">
-                            <col style="width: 28%;">
-                        </colgroup>
-                        <tbody>
-                            <tr style="background-color: #070707;">
-                                <th scope="col" style="text-align: center; vertical-align: middle;">
-                                    <b>Session</b>
-                                </th>
-                                <th scope="col" style="text-align: center; vertical-align: middle;">
-                                    <b>Time</b>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b><span class="hl-green">Opening Remarks</span></b>
-                                    <br> Workshop Overview
-                                </td>
-                                <td style="text-align:center; vertical-align:middle;">
-                                    <span id="time1">9:00 AM - 9:10 AM</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b><span class="hl-green">Invited Talk - BRIAR Program</span></b>
-                                    <br> Speaker: Dr. David Bolme (Oak Ridge National Laboratory)
-                                </td>
-                                <td style="text-align:center; vertical-align:middle;">
-                                    <span id="time2">9:10 AM - 9:40 AM</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b><span class="hl-green">Sponsor Invited Talk - Shield AI</span></b>
-                                    <br> Speaker: Dr. Arnold Wiliem
-                                    <br> "Tiny Objects, Big Questions: What Industry Needs from Future Vision Research"
-                                </td>
-                                <td style="text-align:center; vertical-align:middle;">
-                                    <span id="time3">9:40 AM - 10:10 AM</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>Oral Presentations</b>
-                                    <br> 3 papers (8 min talk + 2 min Q&A each)
-                                </td>
-                                <td style="text-align:center; vertical-align:middle;">
-                                    <span id="time4">10:10 AM - 10:40 AM</span>
-                                </td>
-                            </tr>
-                            <tr style="background-color: #1a1a2e;">
-                                <td>
-                                    <b><span class="hl-green">Coffee Break & Poster Session</span></b>
-                                    <br> Posters located in <b>Exhibit Hall A</b>
-                                </td>
-                                <td style="text-align:center; vertical-align:middle;">
-                                    <span id="time5">10:40 AM - 11:10 AM</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b><span class="hl-green">Invited Talk - Advancing Miniature Aerial Robotics</span></b>
-                                    <br> Speaker: Dr. Pakpong Chirarattananon, University of Toronto
-                                </td>
-                                <td style="text-align:center; vertical-align:middle;">
-                                    <span id="time6">11:10 AM - 11:40 AM</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b><span class="hl-green">Invited Talk - BRIAR Program (Extended)</span></b>
-                                    <br> Speaker: Dr. Xiaoming Liu, UNC Chapel Hill
-                                </td>
-                                <td style="text-align:center; vertical-align:middle;">
-                                    <span id="time7">11:40 AM - 12:10 PM</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>Oral Presentations</b>
-                                    <br> 3 papers (8 min talk + 2 min Q&A each)
-                                </td>
-                                <td style="text-align:center; vertical-align:middle;">
-                                    <span id="time8">12:10 PM - 12:40 PM</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b><span class="hl-green">Closing</span></b>
-                                    <br> Best Paper Awards & Closing Remarks
-                                </td>
-                                <td style="text-align:center; vertical-align:middle;">
-                                    <span id="time9">12:40 PM - 1:00 PM</span>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-            </div>
-        </div>
-        </div>
-    </section>
-
-    <!-- Accepted Papers Section -->
-    <section id="papers" class="content-section text-center section-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <h2>Accepted Papers</h2>
-                    <br>
-                    <p style="color: #aaa; font-style: italic;">Papers will be announced after the review process is complete.</p>
-
-                    <!-- Placeholder for accepted papers - will be updated after acceptance -->
-                    <div style="text-align: left; margin-top: 30px;">
-                        <!-- Oral Papers -->
-                        <h4 style="color: #77c9d4; margin-bottom: 20px;"><i class="fa fa-microphone"></i> Oral Presentations</h4>
-                        <div style="background: rgba(119, 201, 212, 0.1); border-left: 4px solid #77c9d4; padding: 15px 20px; margin-bottom: 15px; border-radius: 4px;">
-                            <p style="color: #888; margin: 0;">To be announced</p>
-                        </div>
-
-                        <!-- Poster Papers -->
-                        <h4 style="color: #77c9d4; margin-top: 30px; margin-bottom: 20px;"><i class="fa fa-image"></i> Poster Presentations <span style="font-size: 0.8em; color: #aaa; font-weight: normal;">(Exhibit Hall A)</span></h4>
-                        <div style="background: rgba(119, 201, 212, 0.1); border-left: 4px solid #77c9d4; padding: 15px 20px; margin-bottom: 15px; border-radius: 4px;">
-                            <p style="color: #888; margin: 0;">To be announced</p>
-                        </div>
-                    </div>
-
-                    <!-- Example format (commented out - uncomment and modify when papers are accepted)
-                    <div style="text-align: left; margin-top: 30px;">
-                        <h4 style="color: #77c9d4; margin-bottom: 20px;"><i class="fa fa-microphone"></i> Oral Presentations</h4>
-                        <div style="background: rgba(119, 201, 212, 0.1); border-left: 4px solid #77c9d4; padding: 15px 20px; margin-bottom: 15px; border-radius: 4px;">
-                            <strong style="color: #fff;">[1] Paper Title Here</strong><br>
-                            <span style="color: #aaa; font-size: 0.95em;">Author 1, Author 2, Author 3</span><br>
-                            <a href="#" style="color: #77c9d4; font-size: 0.9em;">[Paper]</a> <a href="#" style="color: #77c9d4; font-size: 0.9em;">[Code]</a>
-                        </div>
-                    </div>
-                    -->
                 </div>
             </div>
         </div>
