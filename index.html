@@ -270,6 +270,27 @@
             .timeline-mobile { display: block !important; }
         }
 
+        /* Venue section - desktop: stretch map and info card to equal heights */
+        @media (min-width: 769px) {
+            .venue-row {
+                display: flex;
+                align-items: stretch;
+            }
+            .venue-row .venue-map,
+            .venue-row .venue-info {
+                display: flex;
+            }
+            .venue-row .venue-map iframe {
+                width: 100%;
+                height: auto !important;
+                min-height: 300px;
+                flex: 1;
+            }
+            .venue-row .venue-info > div {
+                width: 100%;
+            }
+        }
+
         @media (max-width: 480px) {
             /* Even smaller screens - single column for organizers */
             #organizers .col-md-2,
