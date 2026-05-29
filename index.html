@@ -916,6 +916,7 @@
                                 <td>
                                     <b><span class="hl-green">Keynote 1 &mdash; BRIAR Program</span></b>
                                     <br> Speakers: Dr. David Bolme &amp; David Cornett, MS (Oak Ridge National Laboratory)
+                                    <br><a href="#kc1" class="keynote-jump" style="color:#77c9d4; font-size:0.85em;"><i class="fa fa-info-circle"></i> Abstract &amp; bio</a>
                                 </td>
                                 <td style="text-align:center; vertical-align:middle;">
                                     <span id="time3">9:30 AM - 10:00 AM</span>
@@ -925,6 +926,7 @@
                                 <td>
                                     <b><span class="hl-green">Keynote 2 &mdash; Tiny Objects, Big Questions: What Industry Needs from Future Vision Research</span></b>
                                     <br> Speaker: Dr. Arnold Wiliem (Shield AI) &middot; Sponsor Talk
+                                    <br><a href="#kc2" class="keynote-jump" style="color:#77c9d4; font-size:0.85em;"><i class="fa fa-info-circle"></i> Abstract &amp; bio</a>
                                 </td>
                                 <td style="text-align:center; vertical-align:middle;">
                                     <span id="time4">10:00 AM - 10:30 AM</span>
@@ -952,6 +954,7 @@
                                 <td>
                                     <b><span class="hl-green">Keynote 3 &mdash; Advancing Miniature Aerial Robotics: Bio-Inspired Design and Mechanical Intelligence</span></b>
                                     <br> Speaker: Dr. Pakpong Chirarattananon (University of Toronto)
+                                    <br><a href="#kc3" class="keynote-jump" style="color:#77c9d4; font-size:0.85em;"><i class="fa fa-info-circle"></i> Abstract &amp; bio</a>
                                 </td>
                                 <td style="text-align:center; vertical-align:middle;">
                                     <span id="time7">11:20 AM - 11:50 AM</span>
@@ -961,6 +964,7 @@
                                 <td>
                                     <b><span class="hl-green">Keynote 4 &mdash; BRIAR Algorithms</span></b>
                                     <br> Speaker: Prof. Xiaoming Liu (UNC Chapel Hill)
+                                    <br><a href="#kc4" class="keynote-jump" style="color:#77c9d4; font-size:0.85em;"><i class="fa fa-info-circle"></i> Abstract &amp; bio</a>
                                 </td>
                                 <td style="text-align:center; vertical-align:middle;">
                                     <span id="time8">11:50 AM - 12:20 PM</span>
@@ -1623,6 +1627,27 @@
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             updateScheduleTimes();
+        });
+    </script>
+
+    <!-- Keynote jump: scroll to the Keynote Details accordion and expand the matching panel -->
+    <script>
+        $(function() {
+            $('.keynote-jump').on('click', function(e) {
+                e.preventDefault();
+                var target = $(this).attr('href');                       // e.g. #kc2
+                var $panel = $(target);
+                if (!$panel.length) return;
+                $panel.collapse('show');
+                var $heading = $('#' + $panel.attr('aria-labelledby'));  // e.g. #kh2
+                var $scrollTo = $heading.length ? $heading : $panel;
+                $('html, body').stop().animate({
+                    scrollTop: $scrollTo.offset().top - 70
+                }, 1200, 'easeInOutExpo');
+                if (history.pushState) {
+                    history.pushState(null, null, target);
+                }
+            });
         });
     </script>
 
