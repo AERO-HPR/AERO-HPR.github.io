@@ -986,6 +986,118 @@
         </div>
     </section>
 
+    <!-- Oral Presentation Running Order Section -->
+    <section id="oral-order" class="content-section text-left section-alt">
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h2 class="text-center">Oral Presentation Running Order</h2>
+                <p class="text-center" style="color:#aaa; font-size:0.95em; margin-bottom:30px;">Presenters will be called in the order listed below.</p>
+
+                <style>
+                    .oral-order-wrap {
+                        display: flex;
+                        gap: 30px;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+                    .oral-order-card {
+                        flex: 1;
+                        min-width: 300px;
+                        max-width: 540px;
+                        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+                        border: 1px solid #77c9d4;
+                        border-radius: 12px;
+                        padding: 26px 28px;
+                    }
+                    .oral-order-card h3 {
+                        margin-top: 0;
+                        color: #77c9d4;
+                        border-bottom: 1px solid rgba(119, 201, 212, 0.4);
+                        padding-bottom: 10px;
+                    }
+                    .oral-order-card .oral-time {
+                        font-size: 0.85em;
+                        color: #aaa;
+                        font-weight: normal;
+                    }
+                    .oral-order-list {
+                        list-style: none;
+                        padding-left: 0;
+                        counter-reset: oral;
+                        margin: 18px 0 0;
+                    }
+                    .oral-order-list > li {
+                        counter-increment: oral;
+                        padding: 14px 0 14px 44px;
+                        position: relative;
+                        border-bottom: 1px solid rgba(255,255,255,0.06);
+                        line-height: 1.5;
+                    }
+                    .oral-order-list > li:last-child { border-bottom: none; }
+                    .oral-order-list > li::before {
+                        content: counter(oral);
+                        position: absolute;
+                        left: 0;
+                        top: 14px;
+                        width: 30px;
+                        height: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                        background: #77c9d4;
+                        color: #000;
+                        font-weight: 700;
+                        border-radius: 50%;
+                    }
+                    .oral-order-list .oral-paper-title {
+                        font-weight: 600;
+                        color: #fff;
+                    }
+                    .oral-order-list .oral-paper-authors {
+                        display: block;
+                        color: #ccc;
+                        font-style: italic;
+                        font-size: 0.92em;
+                        margin-top: 3px;
+                    }
+                </style>
+
+                <div class="oral-order-wrap">
+                    <div class="oral-order-card">
+                        <h3>Oral Session 1 <span class="oral-time">&mdash; 9:00&ndash;9:30 AM (3 papers)</span></h3>
+                        <ol class="oral-order-list">
+                            <li>
+                                <span class="oral-paper-title">Scale-Aware Vision-Language Adaptation for Extreme Far-Distance Video Person Re-identification</span>
+                                <span class="oral-paper-authors">Ashwat Rajbhandari, Bharatesh Chakravarthi</span>
+                            </li>
+                            <li>
+                                <span class="oral-paper-title">ARIA-ReID: Altitude-Robust Identity Association for Aerial-to-Ground Person Re-Identification</span>
+                                <span class="oral-paper-authors">Kaustubh S. Bukkapatnam, Laksh Patel, Siddharth Karuturi</span>
+                            </li>
+                            <li>
+                                <span class="oral-paper-title">BReSK: Bootstrapped Contrastive Representation Learning for Skeleton-Based Action Understanding</span>
+                                <span class="oral-paper-authors">Mahmoud Ali, Di Yang, Snehashis Majhi, Quan Kong, Gianpiero Francesca, Francois Bremond</span>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="oral-order-card">
+                        <h3>Oral Session 2 <span class="oral-time">&mdash; 11:00&ndash;11:20 AM (2 papers)</span></h3>
+                        <ol class="oral-order-list">
+                            <li>
+                                <span class="oral-paper-title">Quantifying Operational Drivers of Multimodal Biometric Verification in Aerial Surveillance</span>
+                                <span class="oral-paper-authors">Alina Peluso, David S. Bolme, Gavin Glenn, Jairus Hines, Nicholas Burchfield, Andrew Duncan, Youngrock Yoon, Joel Robert Gray Brogan, Deniz Aykac, Ryan Shivers, Gio Pascascio, Leanne Thompson, Scott Dolvin, David Cornett</span>
+                            </li>
+                            <li>
+                                <span class="oral-paper-title">Compositional Preference Learning for Composed Person Retrieval</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
     <!-- Accepted Papers Section -->
     <section id="accepted-papers" class="content-section text-left section-dark">
         <div class="container">
